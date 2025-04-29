@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio - Gustavo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Gustavo Gomes</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <div class="hero-texto">
+        <h1>Olá, eu sou Gustavo</h1>
+        <p>Futuro IOS Developer | Engenheiro de Software</p>
+        <a href="#projetos" class="btn-hero">Ver Projetos</a>
+      </div>
+      <div class="hero-imagem">
+        <img src="Images/hero.png" alt="Ilustração" />
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="sobre" class="section sobre-container">
+    <div class="sobre-foto">
+      <img src="Images/Perfil.jfif" alt="Sua Foto" class="foto-perfil" />
+      <h3>Gustavo Gomes</h3>
+      <div class="icones-contato">
+        <a href="#"><img src="Images/mail.png" class="icone"></a>
+        <a href="www.linkedin.com/in/gustavo-gonçalves-gomes-8014a0252" target="_blank"><img src="Images/linkedin.png" class="icone"></a>
+        <a href="https://github.com/Gustavoggomesdev" target="_blank"><img src="Images/hub.png" class="icone"></a>
+      </div>
+    </div>
+    <div class="sobre-texto">
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou estudante de Engenharia de Software no 5° período, em busca de me tornar um desenvolvedor. Tenho trabalhado com linguagens como Swift e SwiftUI, criando interfaces modernas e fluidas que entregam boas experiências para o usuário. <br>
+        <br>
+        Além do universo mobile, também desenvolvo projetos com Python, MySQL e tecnologias web (HTML, CSS, JavaScript), incluindo automações e sistemas integrados com APIs externas. <br>
+        <br>
+        Atualmente, atuo como Suporte de TI, onde sou responsável por oferecer suporte técnico para empresa resolvendo problemas relacionados a hardware, software e redes.
+      </p>
+    </div>
+  </section>
+  
+
+  <section id="skills" class="section dark">
+    <h2>Skills</h2>
+    <div class="skills-categorias">
+      <div class="categoria">
+        <h3>Frontend</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+      <div class="categoria">
+        <h3>Backend</h3>
+        <ul>
+          <li>Python</li>
+          <li>Swift</li>
+        </ul>
+      </div>
+      <div class="categoria">
+        <h3>Frameworks</h3>
+        <ul>
+          <li>SwiftUI</li>
+          <li>UIKit</li>
+          <li>Django</li>
+          <li>Flask</li>
+        </ul>
+      </div>
+      <div class="categoria">
+        <h3>Banco de Dados</h3>
+        <ul>
+          <li>MySQL</li>
+          <li>SQLite</li>
+        </ul>
+      </div>
+      <div class="categoria">
+        <h3>Ferramentas</h3>
+        <ul>
+          <li>Git / GitHub</li>
+          <li>MacOS</li>
+          <li>VSCode</li>
+          <li>XCode</li>
+          <li>Figma</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="section">
+    <h2>Meus Projetos</h2>
+    <div class="projetos-grid">
+
+        <div class="projeto">
+            <div class="projeto-imagem">
+              <img src="imagens/projeto1.jpg" alt="Projeto 1">
+            </div>
+            <h3>Projeto 1</h3>
+            <p>Breve descrição do projeto.</p>
+            <button class="btn-vermais" onclick="abrirModal('modal1')">Ver mais</button>
+          </div>
+          
+          <!-- Modal -->
+          <div id="modal1" class="modal">
+            <div class="modal-conteudo dividido">
+              <div class="modal-imagem">
+                <img src="imagens/projeto1.jpg" alt="Imagem do Projeto 1">
+              </div>
+              <div class="modal-texto">
+                <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
+                <h2>Projeto 1</h2>
+                <p>
+                  Este projeto foi desenvolvido utilizando tecnologias como HTML, CSS e JavaScript. 
+                  Nele você encontrará funcionalidades como login, integração com APIs, e responsividade total.
+                </p>
+                <a href="#" target="_blank" class="btn-hero">Ver repositório</a>
+              </div>
+            </div>
+          </div>
+
+
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <!-- Substitua pelo caminho da sua imagem -->
+          <img src="imagens/projeto1.jpg" alt="Projeto 1">
+        </div>
+        <h3>Projeto 2</h3>
+        <p>Descrição do projeto 1.</p>
+        <a href="#">Ver mais</a>
+      </div>
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <!-- Substitua pelo caminho da sua imagem -->
+          <img src="imagens/projeto1.jpg" alt="Projeto 1">
+        </div>
+        <h3>Projeto 1</h3>
+        <p>Descrição do projeto 1.</p>
+        <a href="#">Ver mais</a>
+      </div>
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <!-- Substitua pelo caminho da sua imagem -->
+          <img src="imagens/projeto1.jpg" alt="Projeto 1">
+        </div>
+        <h3>Projeto 1</h3>
+        <p>Descrição do projeto 1.</p>
+        <a href="#">Ver mais</a>
+      </div>
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <!-- Substitua pelo caminho da sua imagem -->
+          <img src="imagens/projeto1.jpg" alt="Projeto 1">
+        </div>
+        <h3>Projeto 1</h3>
+        <p>Descrição do projeto 1.</p>
+        <a href="#">Ver mais</a>
+      </div>
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <!-- Substitua pelo caminho da sua imagem -->
+          <img src="imagens/projeto1.jpg" alt="Projeto 1">
+        </div>
+        <h3>Projeto 1</h3>
+        <p>Descrição do projeto 1.</p>
+        <a href="#">Ver mais</a>
+      </div>
+  </section>
+  
+
+  <section id="contato" class="section">
+    <h2>Contato</h2>
+    <p>Email: gustavoggomes27@hotmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/gustavo-gon%C3%A7alves-gomes-8014a0252/" target="_blank">Seu LinkedIn</a></p>
+    <p>GitHub: <a href="https://github.com/Gustavoggomesdev" target="_blank">Seu GitHub</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gustavo Gomes. Todos os direitos reservados. Icons by icons8.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
