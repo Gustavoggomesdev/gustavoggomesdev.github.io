@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólio - Gustavo</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
   <header>
@@ -64,45 +66,46 @@
       <div class="categoria">
         <h3>Frontend</h3>
         <ul>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
+          <li><i class="fab fa-html5"></i> HTML5</li>
+          <li><i class="fab fa-css3-alt"></i> CSS3</li>
+          <li><i class="fab fa-js"></i> JavaScript</li>
         </ul>
       </div>
       <div class="categoria">
         <h3>Backend</h3>
         <ul>
-          <li>Python</li>
-          <li>Swift</li>
+          <li><i class="fab fa-python"></i> Python</li>
+          <li><i class="fab fa-swift"></i> Swift</li>
         </ul>
       </div>
       <div class="categoria">
         <h3>Frameworks</h3>
         <ul>
-          <li>SwiftUI</li>
-          <li>UIKit</li>
-          <li>Django</li>
-          <li>Flask</li>
+          <li><i class="fas fa-layer-group"></i> SwiftUI</li>
+          <li><i class="fas fa-cubes"></i> UIKit</li>
+          <li><i class="fab fa-python"></i> Django</li>
+          <li><i class="fas fa-flask"></i> Flask</li>
         </ul>
       </div>
       <div class="categoria">
         <h3>Banco de Dados</h3>
         <ul>
-          <li>MySQL</li>
-          <li>SQLite</li>
+          <li><i class="fas fa-database"></i> MySQL</li>
+          <li><i class="fas fa-database"></i> SQLite</li>
         </ul>
       </div>
       <div class="categoria">
         <h3>Ferramentas</h3>
         <ul>
-          <li>Git / GitHub</li>
-          <li>MacOS</li>
-          <li>VSCode</li>
-          <li>XCode</li>
-          <li>Figma</li>
+          <li><i class="fab fa-git-alt"></i> Git / GitHub</li>
+          <li><i class="fab fa-apple"></i> MacOS</li>
+          <li><i class="fas fa-code"></i> VSCode</li>
+          <li><i class="fab fa-apple"></i> XCode</li>
+          <li><i class="fab fa-figma"></i> Figma</li>
         </ul>
       </div>
     </div>
+    
   </section>
 
   <section id="projetos" class="section">
@@ -111,10 +114,10 @@
 
         <div class="projeto">
             <div class="projeto-imagem">
-              <img src="imagens/projeto1.jpg" alt="Projeto 1">
+              <img src="Images/WEATHER_CODE.jpeg" alt="Projeto 1">
             </div>
-            <h3>Projeto 1</h3>
-            <p>Breve descrição do projeto.</p>
+            <h3>Tela de Clima</h3>
+            <p>Uma tela simples de clima semanal.</p>
             <button class="btn-vermais" onclick="abrirModal('modal1')">Ver mais</button>
           </div>
           
@@ -122,14 +125,14 @@
           <div id="modal1" class="modal">
             <div class="modal-conteudo dividido">
               <div class="modal-imagem">
-                <img src="imagens/projeto1.jpg" alt="Imagem do Projeto 1">
+                <img src="Images/WEATHER_TIME.jpeg" alt="Imagem do Projeto 1">
               </div>
               <div class="modal-texto">
                 <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
-                <h2>Projeto 1</h2>
+                <h2>Tela de Clima</h2>
                 <p>
-                  Este projeto foi desenvolvido utilizando tecnologias como HTML, CSS e JavaScript. 
-                  Nele você encontrará funcionalidades como login, integração com APIs, e responsividade total.
+                  Este projeto foi desenvolvido utilizando SwiftUI. 
+                  Trata de uma tela simples de clima, minha primeira tela feita usando swiftUI, seguindo o curso SwiftUI Fundamentals.
                 </p>
                 <a href="#" target="_blank" class="btn-hero">Ver repositório</a>
               </div>
