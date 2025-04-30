@@ -34,3 +34,23 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 animElements.forEach(el => observer.observe(el));
+
+//Aqui tira o  player
+
+let playing = false;
+
+function toggleAudio() {
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("play-btn");
+
+  if (!playing) {
+    audio.play();
+    btn.textContent = "❚❚"; // ícone de pausa
+  } else {
+    audio.pause();
+    btn.textContent = "▶"; // ícone de play
+  }
+
+  playing = !playing;
+}
+
