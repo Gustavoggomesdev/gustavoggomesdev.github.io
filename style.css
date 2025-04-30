@@ -17,6 +17,9 @@
     width: 100%;
     z-index: 999;
   }
+  #contato {
+    background: #1e1e2f;
+  }
   
   .navbar {
     display: flex;
