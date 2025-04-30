@@ -504,3 +504,26 @@ a:hover {
   color: #9932cc; /* Cor quando o mouse passa por cima */
   text-decoration: underline; /* Opcional */
 }
+
+
+/* Aqui tira o  player*/
+.audio-player {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+#audio-player button,
+#play-btn {
+  background: none;
+  border: none;
+  color: #ffcc00;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#play-btn:hover {
+  transform: scale(1.2);
+}
+/* Aqui tira o  player*/
