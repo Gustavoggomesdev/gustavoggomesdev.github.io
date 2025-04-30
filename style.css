@@ -63,7 +63,86 @@
   }
   
   .hero {
-    padding-top: 120px;
+    position: relative;
+    overflow: hidden;
+    height: 60vh;              /* Altura proporcional à tela */
+    min-height: 400px;         /* Altura mínima para garantir conteúdo */
+    max-height: 600px;         /* Evita exageros em telas grandes */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 100px 20px;
+    z-index: 1;
+  }
+  
+  /* Vídeo como plano de fundo */
+  .hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Preenche toda a área mantendo proporção */
+    z-index: 0;
+    opacity: 0.3;              /* Transparência para não ofuscar o texto */
+  }
+  
+  /* Conteúdo por cima do vídeo */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  /* Texto da esquerda */
+  .hero-texto {
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .hero-texto h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #ffcc00;
+  }
+  
+  .hero-texto p {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .btn-hero {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-hero:hover {
+    background-color: #e6b800;
+  }
+  
+  /* Imagem à direita (opcional) */
+  .hero-imagem {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   }
   
   h1 span {
