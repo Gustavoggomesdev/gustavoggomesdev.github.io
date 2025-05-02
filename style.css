@@ -692,7 +692,7 @@ a:hover {
 
 .icone-link i {
   font-size: 32px;
-  color: #333;
+  color: #fff;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
