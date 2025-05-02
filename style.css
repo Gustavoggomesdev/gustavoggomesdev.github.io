@@ -672,3 +672,22 @@ a:hover {
   justify-content: center;
 }
 
+.icones-contato {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.icones-contato a {
+  font-size: 30px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icones-contato a:hover {
+  transform: scale(1.2);
+  color: #00ffcc; /* ou outra cor que combine com seu tema */
+}
+
+
