@@ -676,7 +676,7 @@ a:hover {
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .icones-contato a {
@@ -690,4 +690,14 @@ a:hover {
   color: #00ffcc; /* ou outra cor que combine com seu tema */
 }
 
+.icone-link i {
+  font-size: 32px;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icone-link:hover i {
+  transform: scale(1.2);
+  color: #6a0dad; /* ou outra cor de destaque */
+}
 
