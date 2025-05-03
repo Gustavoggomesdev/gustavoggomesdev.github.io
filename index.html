@@ -41,7 +41,7 @@
 
     <div class="hero-content">
       <div class="hero-texto">
-        <h1>Olá, eu sou Gustavo</h1>
+        <h1 id="digitando"></h1>
         <p>Futuro IOS Developer | Engenheiro de Software</p>
         <a href="#projetos" class="btn-hero">Ver Projetos</a>
       </div>
@@ -290,5 +290,21 @@
     <p>&copy; 2025 Gustavo Gomes. Todos os direitos reservados. Icons by icons8.</p>
   </footer>
   <script src="script.js" defer></script>
+  <script>
+  const texto = "Olá, eu sou Gustavo";
+  const elemento = document.getElementById("digitando");
+  let i = 0;
+
+  function digitar() {
+    if (i < texto.length) {
+      elemento.innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(digitar, 60); // velocidade de digitação (ms)
+    }
+  }
+
+  window.onload = digitar; // Inicia quando a página carregar
+</script>
+
 </body>
 </html>
