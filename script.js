@@ -63,3 +63,29 @@ window.addEventListener('scroll', function () {
     navbar.classList.remove('scrolled');
   }
 });
+
+
+// No script.js, adicione este código no início:
+
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.hero-bg-video');
+  const loading = document.getElementById('loading');
+  
+  // Verifica se o vídeo já está carregado
+  if (video.readyState >= 3) { // 3 = HAVE_FUTURE_DATA
+    hideLoading();
+  } else {
+    video.addEventListener('canplaythrough', hideLoading);
+    video.addEventListener('error', hideLoading); // Caso ocorra erro no carregamento
+    
+    // Timeout de fallback caso o evento não dispare
+    setTimeout(hideLoading, 5000);
+  }
+  
+  function hideLoading() {
+    loading.style.opacity = '0';
+    setTimeout(() => {
+      loading.style.display = 'none';
+    }, 500); // Tempo para a animação de fade out
+  }
+});
