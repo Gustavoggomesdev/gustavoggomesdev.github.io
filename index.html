@@ -10,8 +10,8 @@
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="logo">Gustavo Gomes</div>
+    <nav id="navbar" class="navbar">
+      <div class="logo">Portfólio</div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
@@ -138,7 +138,10 @@
               <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
               <h2>Tela de Clima</h2>
               <div class="modal-imagem">
-                <img src="Images/WEATHER_CODE.jpeg" alt="Imagem do Projeto 1">
+                <video class="video-modal" autoplay loop muted playsinline>
+                  <source src="Images/teste.mp4" type="video/mp4">
+                  Seu navedor não suporta video.
+                </video>
               </div>
               <div class="modal-texto">          
                 <p>
@@ -146,7 +149,7 @@
                   Com botão que altera entre dia e noite, fazendo com que mude a cor do background e tambem os icones entre lua/sol.
                   Trata de uma tela simples de clima, minha primeira tela feita usando swiftUI, seguindo o curso SwiftUI Fundamentals
                 </p>
-                <a href="#" target="_blank" class="btn-hero">Ver repositório</a>
+                <a href="https://github.com/Gustavoggomesdev/WeatherApp" target="_blank" class="btn-hero">Ver repositório</a>
               </div>
             </div>
           </div>
@@ -197,7 +200,10 @@
               <span class="fechar" onclick="fecharModal('modal3')">&times;</span>
               <h2>MindFLow - Monitore Seu Humor</h2>
               <div class="modal-imagem">
-                <img src="Images/Mindflow.PNG" alt="Imagem do Projeto 3">
+                <video class="video-modal" autoplay loop muted playsinline>
+                  <source src="Images/teste2.mp4" type="video/mp4">
+                  Seu navedor não suporta video.
+                </video>
               </div>
               <div class="modal-texto">
                 <p>
@@ -209,7 +215,7 @@
                   <br>
                 </p>
           
-                <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal4')">Voltar</a>
+                <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal3')">Voltar</a>
 
               </div>
             </div>
