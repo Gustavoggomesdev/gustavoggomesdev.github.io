@@ -728,3 +728,14 @@ a:hover {
 
 }
 
+#digitando::after {
+  content: "|";
+  animation: piscar 0.7s infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
