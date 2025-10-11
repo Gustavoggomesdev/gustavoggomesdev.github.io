@@ -35,24 +35,20 @@
         </audio>
       </div>
     </nav>
-    
   </header>
 
   <section id="inicio" class="hero">
     <video autoplay muted loop playsinline preload="auto" class="hero-bg-video">
       <source src="Images/HERO.mp4" type="video/mp4">
     </video>
-
     <div class="hero-content">
       <div class="hero-texto">
         <h1 id="digitando"></h1>
         <p>Futuro IOS Developer | Engenheiro de Software</p>
         <a href="#projetos" class="btn-hero">Ver Projetos</a>
       </div>
-      
     </div>
   </section>
-  
 
   <section id="sobre" class="section sobre-container">
     <div class="sobre-foto">
@@ -77,7 +73,6 @@
       </p>
     </div>
   </section>
-  
 
   <section id="skills" class="section dark">
     <h2>Skills</h2>
@@ -125,189 +120,168 @@
         </ul>
       </div>
     </div>
-    
   </section>
 
   <section id="projetos" class="section">
     <h2>Meus Projetos</h2>
     <div class="projetos-grid">
 
-        <div class="projeto">
-            <div class="projeto-imagem">
-              <img src="Images/WEATHER_CODE.jpeg" alt="Projeto 1">
-            </div>
-            <h3>Tela de Clima</h3>
-            <p>Uma tela simples de clima semanal.</p>
-            <button class="btn-vermais" onclick="abrirModal('modal1')">Ver mais</button>
-          </div>
-          
-          <!-- Modal -->
-          <div id="modal1" class="modal">
-            <div class="modal-conteudo coluna">
-              <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
-              <h2>Tela de Clima</h2>
-              <div class="modal-imagem">
-                <video class="video-modal" autoplay loop muted playsinline>
-                  <source src="Images/WEATHERVIDEO.mp4" type="video/mp4">
-                  Seu navedor não suporta video.
-                </video>
-              </div>
-              <div class="modal-texto">          
-                <p>
-                  Este projeto foi desenvolvido utilizando SwiftUI. 
-                  Com botão que altera entre dia e noite, fazendo com que mude a cor do background e tambem os icones entre lua/sol.
-                  Trata de uma tela simples de clima, minha primeira tela feita usando swiftUI, seguindo o curso SwiftUI Fundamentals
-                </p>
-                <a href="https://github.com/Gustavoggomesdev/WeatherApp" target="_blank" class="btn-hero">Ver repositório</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="projeto">
-            <div class="projeto-imagem">
-              <img src="Images/pesquisa_pro.PNG" alt="Projeto 1">
-            </div>
-            <h3>Sistema de Pesquisa</h3>
-            <p>Pesquisa de Subpastas</p>
-            <button class="btn-vermais" onclick="abrirModal('modal2')">Ver mais</button>
-          </div>
-          
-          <!-- Modal -->
-          <div id="modal2" class="modal">
-            <div class="modal-conteudo coluna">
-              <span class="fechar" onclick="fecharModal('modal2')">&times;</span>
-              <h2>Sistema de Pesquisa de Subpastas</h2>
-              <div class="modal-imagem">
-                <img src="Images/pesquisa_pro.PNG" alt="Imagem do Projeto 1">
-              </div>
-              <div class="modal-texto">
-                <p>
-                  Desenvolvi uma aplicação web com Flask e MySQL para realizar buscas rápidas por subpastas em um servidor corporativo contendo milhões de arquivos organizados em mais de 2 milhões de registros. A interface web possui uma área central rolável e responsiva, permitindo buscas por nomes completos ou parciais com alta eficiência. <br>
-                  <br>
-                  Além da interface, implementei uma automação em Python responsável por varrer o sistema de arquivos do servidor, identificar todas as subpastas (inclusive em estruturas profundas) e registrar suas informações no banco de dados de forma estruturada. Esse processo é executado periodicamente e garante que a base de dados esteja sempre atualizada, mesmo com alterações constantes nas pastas da rede. <br>
-                  <br>
-                  O projeto foi realizado de forma individual e é utilizado diariamente no ambiente de produção da empresa, facilitando o acesso e a organização de documentos e melhorando a produtividade da equipe.
-                </p>
-          
-                <a href="https://github.com/Gustavoggomesdev/Docseach" target="_blank" class="btn-hero">Ver repositório</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="projeto">
-            <div class="projeto-imagem">
-              <img src="Images/Mindflow.PNG" alt="Projeto 3">
-            </div>
-            <h3>MindFLow</h3>
-            <p>Monitorar seu humor</p>
-            <button class="btn-vermais" onclick="abrirModal('modal3')">Ver mais</button>
-          </div>
-          
-          <!-- Modal -->
-          <div id="modal3" class="modal">
-            <div class="modal-conteudo coluna">
-              <span class="fechar" onclick="fecharModal('modal3')">&times;</span>
-              <h2>MindFLow - Monitore Seu Humor</h2>
-              <div class="modal-imagem">
-                <video class="video-modal" autoplay loop muted playsinline>
-                  <source src="Images/MINDFLOWVIDEO.mp4" type="video/mp4">
-                  Seu navedor não suporta video.
-                </video>
-              </div>
-              <div class="modal-texto">
-                <p>
-                  Para um projeto da faculdade, tive a ideia de criar um app (protótipo) de monitoramento de humor. <br>
-                  <br>
-                  O aplicativo permite que o usuário relate como está se sentindo no momento e o motivo desse humor. Em seguida, é possível visualizar o histórico de humores durante a semana ou o mês, além de identificar a principal causa do sentimento.
-                  Também é possível compartilhar o histórico de humor com psicólogos, que poderão agendar consultas tanto online quanto presenciais.
-                  O protótipo foi criado no Figma e inclui telas para dispositivos móveis, além de uma versão web para psicólogos atenderem e analisarem seus pacientes.
-                  <br>
-                </p>
-          
-                <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal3')">Voltar</a>
-
-              </div>
-            </div>
-          </div>
-
+      <!-- Projeto 1: Tela de Clima -->
       <div class="projeto">
-            <div class="projeto-imagem">
-              <img src="Images/automation.PNG" alt="Projeto 3">
-            </div>
-            <h3>Automações em Python</h3>
-            <p>Automações para rotina feitas em Python</p>
-            <button class="btn-vermais" onclick="abrirModal('modal4')">Ver mais</button>
+        <div class="projeto-imagem">
+          <img src="Images/WEATHER_CODE.jpeg" alt="Projeto 1">
+        </div>
+        <h3>Tela de Clima</h3>
+        <p>Uma tela simples de clima semanal.</p>
+        <button class="btn-vermais" onclick="abrirModal('modal1')">Ver mais</button>
+      </div>
+
+      <div id="modal1" class="modal">
+        <div class="modal-conteudo coluna">
+          <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
+          <h2>Tela de Clima</h2>
+          <div class="modal-imagem">
+            <video class="video-modal" autoplay loop muted playsinline>
+              <source src="Images/WEATHERVIDEO.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
           </div>
-          
-          <!-- Modal -->
-          <div id="modal4" class="modal">
-            <div class="modal-conteudo coluna">
-              <span class="fechar" onclick="fecharModal('modal4')">&times;</span>
-              <h2>Automações em Python</h2>
-              <div class="modal-imagem">
-                <img src="Images/automation.PNG" alt="Imagem do Projeto 3">
-              </div>
-              <div class="modal-texto">
-                <p>
-                  Automação feita em python onde transforma PDF em PDF Pesquisável. <br>
-                  <br>
-                  Durante minha jornada como desenvolvedor, criei diversas automações para resolver necessidades específicas no dia a dia, especialmente em ambientes corporativos.<br>
-                  Desenvolvi scripts e sistemas em Python, Shell e MySQL para automatizar tarefas como a organização e indexação de milhares de subpastas em servidores, otimização de buscas em grandes bases de dados, e criação de lotes automatizados no Kodak Capture Pro com controle de tempo e interação com scanner.<br>
-                  Esses projetos surgiram da necessidade de tornar processos mais rápidos e eficientes, e me permitiram aplicar na prática soluções técnicas eficazes, sempre buscando resultados objetivos e funcionais.
-                  <br>
-                </p>
-          
-                <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal4')">Voltar</a>
-
-              </div>
-            </div>
-
-            <div id="modal5" class="modal">
-              <div class="modal-conteudo coluna">
-                <span class="fechar" onclick="fecharModal('modal5')">&times;</span>
-                <h2>Spotify Clone em SwiftUI</h2>
-            
-                <div class="modal-imagem">
-                  <!-- Vídeo do projeto -->
-                  <video src="Videos/spotify_video.mp4" controls autoplay muted loop style="width: 100%; border-radius: 10px;"></video>
-                </div>
-            
-                <div class="modal-texto">
-                  <p>
-                    Desenvolvi uma interface inspirada no aplicativo oficial do Spotify utilizando Swift e SwiftUI.
-                    O projeto simula a tela de exploração de álbuns e playlists, com layout baseado em grid, cards
-                    reutilizáveis e uma navegação fluida seguindo os princípios modernos do design declarativo da Apple. <br><br>
-            
-                    O foco do projeto foi aprimorar habilidades com <strong>SwiftUI, LazyVGrid, gerenciamento de estado e construção de UI responsiva</strong>,
-                    mantendo uma estética fiel ao Spotify com ênfase em espaçamentos, hierarquia visual e boa experiência do usuário. <br><br>
-            
-                    Este projeto faz parte do meu repositório de estudos com SwiftUI, onde replico interfaces de apps reais para consolidar técnicas
-                    de animação, componetização e arquitetura visual limpa.
-                  </p>
-            
-                  <a href="https://github.com/Gustavoggomesdev/learningSwiftUI/blob/main/SpotifyView.swift" target="_blank" class="btn-hero">Ver código</a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="projeto">
-              <div class="projeto-imagem">
-                <!-- Miniatura do vídeo ou um frame estático -->
-                <video src="Videos/spotify_clone_demo.mp4" muted style="width: 100%; border-radius: 10px;"></video>
-              </div>
-              <h3>Spotify Clone</h3>
-              <p>Interface SwiftUI inspirada no Spotify</p>
-              <button class="btn-vermais" onclick="abrirModal('modal5')">Ver mais</button>
-            </div>
-
+          <div class="modal-texto">          
+            <p>
+              Este projeto foi desenvolvido utilizando SwiftUI. 
+              Com botão que altera entre dia e noite, fazendo com que mude a cor do background e também os ícones entre lua/sol.
+              Trata de uma tela simples de clima, minha primeira tela feita usando SwiftUI, seguindo o curso SwiftUI Fundamentals.
+            </p>
+            <a href="https://github.com/Gustavoggomesdev/WeatherApp" target="_blank" class="btn-hero">Ver repositório</a>
           </div>
-      
-          
-          
-      
-      
+        </div>
+      </div>
+
+      <!-- Projeto 2: Sistema de Pesquisa -->
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <img src="Images/pesquisa_pro.PNG" alt="Projeto 2">
+        </div>
+        <h3>Sistema de Pesquisa</h3>
+        <p>Pesquisa de Subpastas</p>
+        <button class="btn-vermais" onclick="abrirModal('modal2')">Ver mais</button>
+      </div>
+
+      <div id="modal2" class="modal">
+        <div class="modal-conteudo coluna">
+          <span class="fechar" onclick="fecharModal('modal2')">&times;</span>
+          <h2>Sistema de Pesquisa de Subpastas</h2>
+          <div class="modal-imagem">
+            <img src="Images/pesquisa_pro.PNG" alt="Imagem do Projeto 2">
+          </div>
+          <div class="modal-texto">
+            <p>
+              Desenvolvi uma aplicação web com Flask e MySQL para realizar buscas rápidas por subpastas em um servidor corporativo contendo milhões de arquivos organizados em mais de 2 milhões de registros. A interface web possui uma área central rolável e responsiva, permitindo buscas por nomes completos ou parciais com alta eficiência. <br><br>
+              Além da interface, implementei uma automação em Python responsável por varrer o sistema de arquivos do servidor, identificar todas as subpastas (inclusive em estruturas profundas) e registrar suas informações no banco de dados de forma estruturada. Esse processo é executado periodicamente e garante que a base de dados esteja sempre atualizada, mesmo com alterações constantes nas pastas da rede. <br><br>
+              O projeto foi realizado de forma individual e é utilizado diariamente no ambiente de produção da empresa, facilitando o acesso e a organização de documentos e melhorando a produtividade da equipe.
+            </p>
+            <a href="https://github.com/Gustavoggomesdev/Docseach" target="_blank" class="btn-hero">Ver repositório</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projeto 3: MindFlow -->
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <img src="Images/Mindflow.PNG" alt="Projeto 3">
+        </div>
+        <h3>MindFLow</h3>
+        <p>Monitorar seu humor</p>
+        <button class="btn-vermais" onclick="abrirModal('modal3')">Ver mais</button>
+      </div>
+
+      <div id="modal3" class="modal">
+        <div class="modal-conteudo coluna">
+          <span class="fechar" onclick="fecharModal('modal3')">&times;</span>
+          <h2>MindFLow - Monitore Seu Humor</h2>
+          <div class="modal-imagem">
+            <video class="video-modal" autoplay loop muted playsinline>
+              <source src="Images/MINDFLOWVIDEO.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+          </div>
+          <div class="modal-texto">
+            <p>
+              Para um projeto da faculdade, tive a ideia de criar um app (protótipo) de monitoramento de humor. <br><br>
+              O aplicativo permite que o usuário relate como está se sentindo no momento e o motivo desse humor. Em seguida, é possível visualizar o histórico de humores durante a semana ou o mês, além de identificar a principal causa do sentimento.
+              Também é possível compartilhar o histórico de humor com psicólogos, que poderão agendar consultas tanto online quanto presenciais.
+              O protótipo foi criado no Figma e inclui telas para dispositivos móveis, além de uma versão web para psicólogos atenderem e analisarem seus pacientes.
+            </p>
+            <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal3')">Voltar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projeto 4: Automações -->
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <img src="Images/automation.PNG" alt="Projeto 4">
+        </div>
+        <h3>Automações em Python</h3>
+        <p>Automações para rotina feitas em Python</p>
+        <button class="btn-vermais" onclick="abrirModal('modal4')">Ver mais</button>
+      </div>
+
+      <div id="modal4" class="modal">
+        <div class="modal-conteudo coluna">
+          <span class="fechar" onclick="fecharModal('modal4')">&times;</span>
+          <h2>Automações em Python</h2>
+          <div class="modal-imagem">
+            <img src="Images/automation.PNG" alt="Imagem do Projeto 4">
+          </div>
+          <div class="modal-texto">
+            <p>
+              Automação feita em Python onde transforma PDF em PDF pesquisável. <br><br>
+              Durante minha jornada como desenvolvedor, criei diversas automações para resolver necessidades específicas no dia a dia, especialmente em ambientes corporativos.<br>
+              Desenvolvi scripts e sistemas em Python, Shell e MySQL para automatizar tarefas como a organização e indexação de milhares de subpastas em servidores, otimização de buscas em grandes bases de dados, e criação de lotes automatizados no Kodak Capture Pro com controle de tempo e interação com scanner.<br>
+              Esses projetos surgiram da necessidade de tornar processos mais rápidos e eficientes, e me permitiram aplicar na prática soluções técnicas eficazes, sempre buscando resultados objetivos e funcionais.
+            </p>
+            <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal4')">Voltar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projeto 5: Spotify Clone -->
+      <div class="projeto">
+        <div class="projeto-imagem">
+          <video src="Videos/spotify_clone_demo.mp4" muted style="width: 100%; border-radius: 10px;" playsinline></video>
+        </div>
+        <h3>Spotify Clone</h3>
+        <p>Interface SwiftUI inspirada no Spotify</p>
+        <button class="btn-vermais" onclick="abrirModal('modal5')">Ver mais</button>
+      </div>
+
+      <div id="modal5" class="modal">
+        <div class="modal-conteudo coluna">
+          <span class="fechar" onclick="fecharModal('modal5')">&times;</span>
+          <h2>Spotify Clone em SwiftUI</h2>
+          <div class="modal-imagem">
+            <video src="Videos/spotify_clone_demo.mp4" controls autoplay muted loop style="width: 100%; border-radius: 10px;"></video>
+          </div>
+          <div class="modal-texto">
+            <p>
+              Desenvolvi uma interface inspirada no aplicativo oficial do Spotify utilizando Swift e SwiftUI.
+              O projeto simula a tela de exploração de álbuns e playlists, com layout baseado em grid, cards
+              reutilizáveis e uma navegação fluida seguindo os princípios modernos do design declarativo da Apple. <br><br>
+
+              O foco do projeto foi aprimorar habilidades com <strong>SwiftUI, LazyVGrid, gerenciamento de estado e construção de UI responsiva</strong>,
+              mantendo uma estética fiel ao Spotify com ênfase em espaçamentos, hierarquia visual e boa experiência do usuário. <br><br>
+
+              Este projeto faz parte do meu repositório de estudos com SwiftUI, onde replico interfaces de apps reais para consolidar técnicas
+              de animação, componetização e arquitetura visual limpa.
+            </p>
+            <a href="https://github.com/Gustavoggomesdev/learningSwiftUI/blob/main/SpotifyView.swift" target="_blank" class="btn-hero">Ver código</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
-  
 
   <section id="contato" class="section">
     <h3>Gostaria de ter um site para portfólio, e-commerce ou landing page?</h3>
@@ -332,25 +306,22 @@
   <footer>
     <p>&copy; 2025 Gustavo Gomes. Todos os direitos reservados. Icons by icons8.</p>
   </footer>
+
   <script src="script.js" defer></script>
   <script>
-  const texto = "Olá, eu sou Gustavo";
-  const elemento = document.getElementById("digitando");
-  let i = 0;
+    const texto = "Olá, eu sou Gustavo";
+    const elemento = document.getElementById("digitando");
+    let i = 0;
 
-  function digitar() {
-    if (i < texto.length) {
-      elemento.innerHTML += texto.charAt(i);
-      i++;
-      setTimeout(digitar, 60); // velocidade de digitação (ms)
+    function digitar() {
+      if (i < texto.length) {
+        elemento.innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(digitar, 60);
+      }
     }
-  }
 
-  window.onload = digitar; // Inicia quando a página carregar
-</script>
-
+    window.onload = digitar;
+  </script>
 </body>
 </html>
-
-
-
