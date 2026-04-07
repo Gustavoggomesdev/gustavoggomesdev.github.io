@@ -5,11 +5,13 @@ function toggleMenu() {
 
 // Modal
 function abrirModal(id) {
-  document.getElementById(id).style.display = "block";
+  document.getElementById(id).style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 
 function fecharModal(id) {
   document.getElementById(id).style.display = "none";
+  document.body.style.overflow = "";
 }
 
 window.onclick = function(event) {
@@ -17,12 +19,22 @@ window.onclick = function(event) {
   modais.forEach(modal => {
     if (event.target === modal) {
       modal.style.display = "none";
+      document.body.style.overflow = "";
     }
   });
 };
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    document.querySelectorAll('.modal').forEach((modal) => {
+      modal.style.display = 'none';
+    });
+    document.body.style.overflow = '';
+  }
+});
+
 // Animações ao rolar (fade-in)
-const animElements = document.querySelectorAll('.fade-in, .fade-in-up');
+const animElements = document.querySelectorAll('.reveal-up, .projeto, .categoria');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -44,7 +56,9 @@ function toggleAudio() {
   const btn = document.getElementById("play-btn");
 
   if (!playing) {
-    audio.play();
+    audio.play().catch(() => {
+      btn.textContent = "▶";
+    });
     btn.textContent = "❚❚"; // ícone de pausa
   } else {
     audio.pause();
@@ -70,6 +84,18 @@ window.addEventListener('scroll', function () {
 document.addEventListener('DOMContentLoaded', function() {
   const video = document.querySelector('.hero-bg-video');
   const loading = document.getElementById('loading');
+  const navLinks = document.getElementById('navLinks');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    animElements.forEach((el) => el.classList.add('show'));
+  }
   
   // Verifica se o vídeo já está carregado
   if (video.readyState >= 3) { // 3 = HAVE_FUTURE_DATA

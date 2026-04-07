@@ -7,6 +7,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Portfólio - Gustavo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="Images/favicon.ico" rel="icon" type="image/x-icon">
@@ -18,7 +21,7 @@
   </div>
   <header>
     <nav id="navbar" class="navbar">
-      <div class="logo">Gustavo G. Gomes</div>
+      <div class="logo">Gustavo <span>G. Gomes</span></div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
@@ -26,9 +29,9 @@
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
       <div class="audio-player">
-        <button id="play-btn" onclick="toggleAudio()">▶</button>
+        <button id="play-btn" onclick="toggleAudio()" aria-label="Tocar ou pausar música">▶</button>
         <audio id="bg-music" loop>
           <source src="Images/Travis Scott - Coffee Bean (Instrumental) | Tune.mp3" type="audio/mp3" />
           Seu navegador não suporta áudio.
@@ -37,20 +40,27 @@
     </nav>
   </header>
 
-  <section id="inicio" class="hero">
+  <section id="inicio" class="hero reveal-up">
     <video autoplay muted loop playsinline preload="auto" class="hero-bg-video">
       <source src="Images/HERO.mp4" type="video/mp4">
     </video>
     <div class="hero-content">
       <div class="hero-texto">
+        <span class="hero-badge">Portfólio de Engenharia de Software</span>
         <h1 id="digitando"></h1>
-        <p>Futuro IOS Developer | Engenheiro de Software</p>
-        <a href="#projetos" class="btn-hero">Ver Projetos</a>
+        <p>Futuro iOS Developer | Engenheiro de Software focado em interfaces modernas, automações inteligentes e experiências digitais eficientes.</p>
+        <div class="hero-actions">
+          <a href="#projetos" class="btn-hero">Ver Projetos</a>
+          <a href="#contato" class="btn-hero ghost">Falar comigo</a>
+        </div>
       </div>
     </div>
+    <a href="#sobre" class="scroll-indicator" aria-label="Rolar para seção sobre">
+      <i class="fas fa-chevron-down"></i>
+    </a>
   </section>
 
-  <section id="sobre" class="section sobre-container">
+  <section id="sobre" class="section sobre-container reveal-up">
     <div class="sobre-foto">
       <img src="Images/Perfil.jfif" alt="Sua Foto" class="foto-perfil" />
       <h3>Gustavo Gomes</h3>
@@ -74,7 +84,7 @@
     </div>
   </section>
 
-  <section id="skills" class="section dark">
+  <section id="skills" class="section dark reveal-up">
     <h2>Skills</h2>
     <div class="skills-categorias">
       <div class="categoria">
@@ -122,8 +132,9 @@
     </div>
   </section>
 
-  <section id="projetos" class="section">
+  <section id="projetos" class="section reveal-up">
     <h2>Meus Projetos</h2>
+    <p class="section-subtitle">Projetos selecionados com foco em UI moderna, produtividade e soluções reais para problemas do dia a dia.</p>
     <div class="projetos-grid">
 
       <!-- Projeto 1: Tela de Clima -->
@@ -131,8 +142,9 @@
         <div class="projeto-imagem">
           <img src="Images/WEATHER_CODE.jpeg" alt="Projeto 1">
         </div>
+        <span class="projeto-tag">SwiftUI</span>
         <h3>Tela de Clima</h3>
-        <p>Uma tela simples de clima semanal.</p>
+        <p>Interface com alternância dia/noite, animações suaves e foco em composição visual no SwiftUI.</p>
         <button class="btn-vermais" onclick="abrirModal('modal1')">Ver mais</button>
       </div>
 
@@ -162,8 +174,9 @@
         <div class="projeto-imagem">
           <img src="Images/pesquisa_pro.PNG" alt="Projeto 2">
         </div>
+        <span class="projeto-tag">Flask + MySQL</span>
         <h3>Sistema de Pesquisa</h3>
-        <p>Pesquisa de Subpastas</p>
+        <p>Busca ultrarrápida em milhões de registros para acelerar processos em ambiente corporativo.</p>
         <button class="btn-vermais" onclick="abrirModal('modal2')">Ver mais</button>
       </div>
 
@@ -190,8 +203,9 @@
         <div class="projeto-imagem">
           <img src="Images/Mindflow.PNG" alt="Projeto 3">
         </div>
+        <span class="projeto-tag">UX/UI + Figma</span>
         <h3>MindFLow</h3>
-        <p>Monitorar seu humor</p>
+        <p>Protótipo de monitoramento emocional com histórico inteligente e visão clínica integrada.</p>
         <button class="btn-vermais" onclick="abrirModal('modal3')">Ver mais</button>
       </div>
 
@@ -222,8 +236,9 @@
         <div class="projeto-imagem">
           <img src="Images/automation.PNG" alt="Projeto 4">
         </div>
+        <span class="projeto-tag">Python</span>
         <h3>Automações em Python</h3>
-        <p>Automações para rotina feitas em Python</p>
+        <p>Automação de rotinas operacionais para reduzir tarefas repetitivas e aumentar produtividade.</p>
         <button class="btn-vermais" onclick="abrirModal('modal4')">Ver mais</button>
       </div>
 
@@ -251,8 +266,9 @@
         <div class="projeto-imagem">
           <img src="Images/spotify_img.PNG" alt="Projeto 4">
         </div>
+        <span class="projeto-tag">SwiftUI</span>
         <h3>Spotify Clone</h3>
-        <p>Interface SwiftUI inspirada no Spotify</p>
+        <p>Clone visual com grid responsivo, componentes reutilizáveis e estética inspirada em app real.</p>
         <button class="btn-vermais" onclick="abrirModal('modal5')">Ver mais</button>
       </div>
 
@@ -283,7 +299,7 @@
     </div>
   </section>
 
-  <section id="contato" class="section">
+  <section id="contato" class="section reveal-up">
     <h3>Gostaria de ter um site para portfólio, e-commerce ou landing page?</h3>
     <br>
     <h3>Entre em contato:</h3>
