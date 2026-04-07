@@ -2,344 +2,286 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="theme-color" content="#000000">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Portfólio - Gustavo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="Images/favicon.ico" rel="icon" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1622" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Portfólio - Gustavo Gomes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="Images/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
-  <div id="loading" class="loading">
-    <div class="loading-spinner"></div>
-    <p>Carregando...</p>
+  <div id="loading" class="loading-screen">
+    <div class="spinner-border text-info" role="status" aria-hidden="true"></div>
+    <p class="mt-3 mb-0">Carregando portfólio...</p>
   </div>
+
   <header>
-    <nav id="navbar" class="navbar">
-      <div class="logo">Gustavo <span>G. Gomes</span></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
-      <div class="audio-player">
-        <button id="play-btn" onclick="toggleAudio()" aria-label="Tocar ou pausar música">▶</button>
-        <audio id="bg-music" loop>
-          <source src="Images/Travis Scott - Coffee Bean (Instrumental) | Tune.mp3" type="audio/mp3" />
-          Seu navegador não suporta áudio.
-        </audio>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#inicio">Gustavo <span>G. Gomes</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            <li class="nav-item ms-lg-2">
+              <button id="play-btn" class="btn btn-sm btn-outline-info rounded-pill" type="button" aria-label="Tocar ou pausar música">
+                <i class="bi bi-play-fill"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
+      <audio id="bg-music" loop>
+        <source src="Images/Travis Scott - Coffee Bean (Instrumental) | Tune.mp3" type="audio/mp3" />
+        Seu navegador não suporta áudio.
+      </audio>
     </nav>
   </header>
 
-  <section id="inicio" class="hero reveal-up">
-    <video autoplay muted loop playsinline preload="auto" class="hero-bg-video">
-      <source src="Images/HERO.mp4" type="video/mp4">
-    </video>
-    <div class="hero-content">
-      <div class="hero-texto">
-        <span class="hero-badge">Portfólio de Engenharia de Software</span>
-        <h1 id="digitando"></h1>
-        <p>Futuro iOS Developer | Engenheiro de Software focado em interfaces modernas, automações inteligentes e experiências digitais eficientes.</p>
-        <div class="hero-actions">
-          <a href="#projetos" class="btn-hero">Ver Projetos</a>
-          <a href="#contato" class="btn-hero ghost">Falar comigo</a>
-        </div>
-      </div>
-    </div>
-    <a href="#sobre" class="scroll-indicator" aria-label="Rolar para seção sobre">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </section>
-
-  <section id="sobre" class="section sobre-container reveal-up">
-    <div class="sobre-foto">
-      <img src="Images/Perfil.jfif" alt="Sua Foto" class="foto-perfil" />
-      <h3>Gustavo Gomes</h3>
-      <div class="icones-contato">
-        <a href="mailto:gustavoggomes@hotmail.com" target="_blank" class="icone-link"><img src="Images/mail.png" class="icone"></a>
-        <a href="https://www.linkedin.com/in/gustavoggomes" target="_blank" rel="noopener noreferrer"><img src="Images/linkedin.png" class="icone"></a>
-        <a href="https://github.com/Gustavoggomesdev" target="_blank"><img src="Images/hub.png" class="icone"></a>
-      </div>
-    </div>
-    <div class="sobre-texto">
-      <h2>Sobre Mim</h2>
-      <p>
-        Sou estudante de Engenharia de Software no 6º período. Estou constantemente em busca de aprimorar minhas habilidades como desenvolvedor, com foco na criação de interfaces funcionais e intuitivas para o usuário. <br>
-        <br>
-        Atualmente, estou explorando o desenvolvimento mobile com Swift e SwiftUI, buscando criar interfaces modernas e fluídas. Além disso, trabalho com Python, MySQL, HTML, CSS e JavaScript, aplicando meus conhecimentos em tecnologias web para desenvolver soluções completas. <br>
-        <br>
-        Acredito que um bom design deve facilitar a navegação e aprimorar a experiência do usuário. Possuo conhecimento em UX/UI e busco sempre aplicar esses princípios em meus projetos, garantindo interfaces eficientes e intuitivas. Além disso, sou capaz de integrar sistemas com APIs externas e automatizar processos para melhorar a usabilidade e otimizar o desempenho. <br>
-        <br>
-        Neste portfólio, compartilho alguns dos meus projetos e aprendizados. Se você tem uma ideia ou projeto, sinta-se à vontade para entrar em contato!
-      </p>
-    </div>
-  </section>
-
-  <section id="skills" class="section dark reveal-up">
-    <h2>Skills</h2>
-    <div class="skills-categorias">
-      <div class="categoria">
-        <h3>Frontend</h3>
-        <ul>
-          <li><i class="fab fa-swift"></i> Swift</li>
-          <li><i class="fab fa-html5"></i> HTML5</li>
-          <li><i class="fab fa-css3-alt"></i> CSS3</li>
-          <li><i class="fab fa-js"></i> JavaScript</li>
-        </ul>
-      </div>
-      <div class="categoria">
-        <h3>Backend</h3>
-        <ul>
-          <li><i class="fab fa-python"></i> Python</li>
-          <li><i class="fab fa-swift"></i> Swift</li>
-        </ul>
-      </div>
-      <div class="categoria">
-        <h3>Frameworks</h3>
-        <ul>
-          <li><i class="fas fa-layer-group"></i> SwiftUI</li>
-          <li><i class="fas fa-cubes"></i> UIKit</li>
-          <li><i class="fab fa-python"></i> Django</li>
-          <li><i class="fas fa-flask"></i> Flask</li>
-        </ul>
-      </div>
-      <div class="categoria">
-        <h3>Banco de Dados</h3>
-        <ul>
-          <li><i class="fas fa-database"></i> MySQL</li>
-          <li><i class="fas fa-database"></i> SQLite</li>
-        </ul>
-      </div>
-      <div class="categoria">
-        <h3>Ferramentas</h3>
-        <ul>
-          <li><i class="fab fa-git-alt"></i> Git / GitHub</li>
-          <li><i class="fab fa-apple"></i> MacOS</li>
-          <li><i class="fas fa-code"></i> VSCode</li>
-          <li><i class="fab fa-apple"></i> XCode</li>
-          <li><i class="fab fa-figma"></i> Figma</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projetos" class="section reveal-up">
-    <h2>Meus Projetos</h2>
-    <p class="section-subtitle">Projetos selecionados com foco em UI moderna, produtividade e soluções reais para problemas do dia a dia.</p>
-    <div class="projetos-grid">
-
-      <!-- Projeto 1: Tela de Clima -->
-      <div class="projeto">
-        <div class="projeto-imagem">
-          <img src="Images/WEATHER_CODE.jpeg" alt="Projeto 1">
-        </div>
-        <span class="projeto-tag">SwiftUI</span>
-        <h3>Tela de Clima</h3>
-        <p>Interface com alternância dia/noite, animações suaves e foco em composição visual no SwiftUI.</p>
-        <button class="btn-vermais" onclick="abrirModal('modal1')">Ver mais</button>
-      </div>
-
-      <div id="modal1" class="modal">
-        <div class="modal-conteudo coluna">
-          <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
-          <h2>Tela de Clima</h2>
-          <div class="modal-imagem">
-            <video class="video-modal" autoplay loop muted playsinline>
-              <source src="Images/WEATHERVIDEO.mp4" type="video/mp4">
-              Seu navegador não suporta vídeo.
-            </video>
-          </div>
-          <div class="modal-texto">          
-            <p>
-              Este projeto foi desenvolvido utilizando SwiftUI. 
-              Com botão que altera entre dia e noite, fazendo com que mude a cor do background e também os ícones entre lua/sol.
-              Trata de uma tela simples de clima, minha primeira tela feita usando SwiftUI, seguindo o curso SwiftUI Fundamentals.
+  <main>
+    <section id="inicio" class="hero-section d-flex align-items-center">
+      <video autoplay muted loop playsinline preload="auto" class="hero-bg-video">
+        <source src="Images/HERO.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-glow hero-glow-left" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-right" aria-hidden="true"></div>
+      <div class="container position-relative">
+        <div class="row justify-content-center text-center text-lg-start align-items-center g-4">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="hero-badge">Portfólio Profissional</span>
+            <h1 id="digitando" class="display-4 fw-bold mb-3"></h1>
+            <p class="lead hero-description mx-auto mb-4">
+              Futuro iOS Developer e Engenheiro de Software criando interfaces modernas,
+              automações inteligentes e soluções web completas.
             </p>
-            <a href="https://github.com/Gustavoggomesdev/WeatherApp" target="_blank" class="btn-hero">Ver repositório</a>
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+              <a href="#projetos" class="btn btn-info btn-lg px-4">Ver Projetos</a>
+              <a href="#contato" class="btn btn-outline-light btn-lg px-4">Falar comigo</a>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <aside class="hero-panel mx-auto ms-lg-auto">
+              <h2 class="h6 mb-3">Resumo rápido</h2>
+              <div class="hero-kpi">
+                <span>Projetos publicados</span>
+                <strong>+5</strong>
+              </div>
+              <div class="hero-kpi">
+                <span>Foco atual</span>
+                <strong>SwiftUI</strong>
+              </div>
+              <div class="hero-kpi mb-0">
+                <span>Disponível para</span>
+                <strong>Freelas</strong>
+              </div>
+            </aside>
           </div>
         </div>
       </div>
+      <a href="#sobre" class="scroll-indicator" aria-label="Rolar para seção sobre"><i class="bi bi-chevron-double-down"></i></a>
+    </section>
 
-      <!-- Projeto 2: Sistema de Pesquisa -->
-      <div class="projeto">
-        <div class="projeto-imagem">
-          <img src="Images/pesquisa_pro.PNG" alt="Projeto 2">
-        </div>
-        <span class="projeto-tag">Flask + MySQL</span>
-        <h3>Sistema de Pesquisa</h3>
-        <p>Busca ultrarrápida em milhões de registros para acelerar processos em ambiente corporativo.</p>
-        <button class="btn-vermais" onclick="abrirModal('modal2')">Ver mais</button>
-      </div>
-
-      <div id="modal2" class="modal">
-        <div class="modal-conteudo coluna">
-          <span class="fechar" onclick="fecharModal('modal2')">&times;</span>
-          <h2>Sistema de Pesquisa de Subpastas</h2>
-          <div class="modal-imagem">
-            <img src="Images/pesquisa_pro.PNG" alt="Imagem do Projeto 2">
+    <section class="highlights-strip">
+      <div class="container">
+        <div class="row g-3" data-aos="fade-up">
+          <div class="col-md-4">
+            <div class="highlight-card">
+              <i class="bi bi-layers"></i>
+              <h3>Arquitetura limpa</h3>
+              <p>Código modular, organizado e fácil de escalar em novos projetos.</p>
+            </div>
           </div>
-          <div class="modal-texto">
-            <p>
-              Desenvolvi uma aplicação web com Flask e MySQL para realizar buscas rápidas por subpastas em um servidor corporativo contendo milhões de arquivos organizados em mais de 2 milhões de registros. A interface web possui uma área central rolável e responsiva, permitindo buscas por nomes completos ou parciais com alta eficiência. <br><br>
-              Além da interface, implementei uma automação em Python responsável por varrer o sistema de arquivos do servidor, identificar todas as subpastas (inclusive em estruturas profundas) e registrar suas informações no banco de dados de forma estruturada. Esse processo é executado periodicamente e garante que a base de dados esteja sempre atualizada, mesmo com alterações constantes nas pastas da rede. <br><br>
-              O projeto foi realizado de forma individual e é utilizado diariamente no ambiente de produção da empresa, facilitando o acesso e a organização de documentos e melhorando a produtividade da equipe.
-            </p>
-            <a href="https://github.com/Gustavoggomesdev/Docseach" target="_blank" class="btn-hero">Ver repositório</a>
+          <div class="col-md-4">
+            <div class="highlight-card">
+              <i class="bi bi-lightning-charge"></i>
+              <h3>Performance visual</h3>
+              <p>Layout responsivo com carregamento suave e microinterações objetivas.</p>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Projeto 3: MindFlow -->
-      <div class="projeto">
-        <div class="projeto-imagem">
-          <img src="Images/Mindflow.PNG" alt="Projeto 3">
-        </div>
-        <span class="projeto-tag">UX/UI + Figma</span>
-        <h3>MindFLow</h3>
-        <p>Protótipo de monitoramento emocional com histórico inteligente e visão clínica integrada.</p>
-        <button class="btn-vermais" onclick="abrirModal('modal3')">Ver mais</button>
-      </div>
-
-      <div id="modal3" class="modal">
-        <div class="modal-conteudo coluna">
-          <span class="fechar" onclick="fecharModal('modal3')">&times;</span>
-          <h2>MindFLow - Monitore Seu Humor</h2>
-          <div class="modal-imagem">
-            <video class="video-modal" autoplay loop muted playsinline>
-              <source src="Images/MINDFLOWVIDEO.mp4" type="video/mp4">
-              Seu navegador não suporta vídeo.
-            </video>
-          </div>
-          <div class="modal-texto">
-            <p>
-              Para um projeto da faculdade, tive a ideia de criar um app (protótipo) de monitoramento de humor. <br><br>
-              O aplicativo permite que o usuário relate como está se sentindo no momento e o motivo desse humor. Em seguida, é possível visualizar o histórico de humores durante a semana ou o mês, além de identificar a principal causa do sentimento.
-              Também é possível compartilhar o histórico de humor com psicólogos, que poderão agendar consultas tanto online quanto presenciais.
-              O protótipo foi criado no Figma e inclui telas para dispositivos móveis, além de uma versão web para psicólogos atenderem e analisarem seus pacientes.
-            </p>
-            <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal3')">Voltar</a>
+          <div class="col-md-4">
+            <div class="highlight-card">
+              <i class="bi bi-palette2"></i>
+              <h3>Design orientado a UX</h3>
+              <p>Interfaces elegantes, intuitivas e com foco em experiência real de uso.</p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Projeto 4: Automações -->
-      <div class="projeto">
-        <div class="projeto-imagem">
-          <img src="Images/automation.PNG" alt="Projeto 4">
-        </div>
-        <span class="projeto-tag">Python</span>
-        <h3>Automações em Python</h3>
-        <p>Automação de rotinas operacionais para reduzir tarefas repetitivas e aumentar produtividade.</p>
-        <button class="btn-vermais" onclick="abrirModal('modal4')">Ver mais</button>
-      </div>
-
-      <div id="modal4" class="modal">
-        <div class="modal-conteudo coluna">
-          <span class="fechar" onclick="fecharModal('modal4')">&times;</span>
-          <h2>Automações em Python</h2>
-          <div class="modal-imagem">
-            <img src="Images/automation.PNG" alt="Imagem do Projeto 4">
-          </div>
-          <div class="modal-texto">
-            <p>
-              Automação feita em Python onde transforma PDF em PDF pesquisável. <br><br>
-              Durante minha jornada como desenvolvedor, criei diversas automações para resolver necessidades específicas no dia a dia, especialmente em ambientes corporativos.<br>
-              Desenvolvi scripts e sistemas em Python, Shell e MySQL para automatizar tarefas como a organização e indexação de milhares de subpastas em servidores, otimização de buscas em grandes bases de dados, e criação de lotes automatizados no Kodak Capture Pro com controle de tempo e interação com scanner.<br>
-              Esses projetos surgiram da necessidade de tornar processos mais rápidos e eficientes, e me permitiram aplicar na prática soluções técnicas eficazes, sempre buscando resultados objetivos e funcionais.
-            </p>
-            <a href="javascript:void(0)" class="btn-hero" onclick="fecharModal('modal4')">Voltar</a>
+    <section id="sobre" class="section-spacing">
+      <div class="container">
+        <div class="card about-card border-0" data-aos="fade-up">
+          <div class="card-body p-4 p-lg-5">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-4 text-center">
+                <img src="Images/Perfil.jfif" alt="Foto de Gustavo Gomes" class="profile-photo mb-3" />
+                <h3 class="h5 mb-2">Gustavo Gomes</h3>
+                <div class="d-flex justify-content-center gap-3 social-icons">
+                  <a href="mailto:gustavoggomes@hotmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar email"><i class="bi bi-envelope"></i></a>
+                  <a href="https://www.linkedin.com/in/gustavoggomes" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/Gustavoggomesdev" target="_blank" rel="noopener noreferrer" aria-label="Perfil no GitHub"><i class="bi bi-github"></i></a>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <h2 class="mb-3">Sobre Mim</h2>
+                <p class="mb-0 about-text">
+                  Sou estudante de Engenharia de Software no 6º período e busco evoluir continuamente como desenvolvedor, com foco em experiências digitais funcionais e intuitivas.
+                  Atualmente estou explorando desenvolvimento mobile com Swift e SwiftUI, além de atuar com Python, MySQL, HTML, CSS e JavaScript em soluções web completas.
+                  Também aplico princípios de UX/UI para criar produtos mais claros, eficientes e agradáveis de usar.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Projeto 5: Spotify Clone -->
-      <div class="projeto">
-        <div class="projeto-imagem">
-          <img src="Images/spotify_img.PNG" alt="Projeto 4">
+    <section id="skills" class="section-spacing section-muted">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="mb-2">Skills</h2>
+          <p class="text-secondary mb-0">Stack principal organizada por áreas de atuação.</p>
         </div>
-        <span class="projeto-tag">SwiftUI</span>
-        <h3>Spotify Clone</h3>
-        <p>Clone visual com grid responsivo, componentes reutilizáveis e estética inspirada em app real.</p>
-        <button class="btn-vermais" onclick="abrirModal('modal5')">Ver mais</button>
-      </div>
 
-      <div id="modal5" class="modal">
-        <div class="modal-conteudo coluna">
-          <span class="fechar" onclick="fecharModal('modal5')">&times;</span>
-          <h2>Spotify Clone em SwiftUI</h2>
-          <div class="modal-imagem">
-            <video src="Images/spotify_video.mp4" controls autoplay muted loop style="width: 100%; border-radius: 10px;"></video>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="skill-card h-100">
+              <h3 class="h6">Frontend</h3>
+              <ul class="skill-list">
+                <li>Swift</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
           </div>
-          <div class="modal-texto">
-            <p>
-              Desenvolvi uma interface inspirada no aplicativo oficial do Spotify utilizando Swift e SwiftUI.
-              O projeto simula a tela de exploração de álbuns e playlists, com layout baseado em grid, cards
-              reutilizáveis e uma navegação fluida seguindo os princípios modernos do design declarativo da Apple. <br><br>
 
-              O foco do projeto foi aprimorar habilidades com <strong>SwiftUI, LazyVGrid, gerenciamento de estado e construção de UI responsiva</strong>,
-              mantendo uma estética fiel ao Spotify com ênfase em espaçamentos, hierarquia visual e boa experiência do usuário. <br><br>
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-card h-100">
+              <h3 class="h6">Backend</h3>
+              <ul class="skill-list">
+                <li>Python</li>
+                <li>Swift</li>
+                <li>Flask</li>
+                <li>Django</li>
+              </ul>
+            </div>
+          </div>
 
-              Este projeto faz parte do meu repositório de estudos com SwiftUI, onde replico interfaces de apps reais para consolidar técnicas
-              de animação, componetização e arquitetura visual limpa.
-            </p>
-            <a href="https://github.com/Gustavoggomesdev/learningSwiftUI/blob/main/SpotifyView.swift" target="_blank" class="btn-hero">Ver código</a>
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="skill-card h-100">
+              <h3 class="h6">Banco de Dados</h3>
+              <ul class="skill-list">
+                <li>MySQL</li>
+                <li>SQLite</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-card h-100">
+              <h3 class="h6">Frameworks e UI</h3>
+              <ul class="skill-list">
+                <li>SwiftUI</li>
+                <li>UIKit</li>
+                <li>Bootstrap 5</li>
+                <li>Figma</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="skill-card h-100">
+              <h3 class="h6">Ferramentas</h3>
+              <ul class="skill-list">
+                <li>Git / GitHub</li>
+                <li>VS Code</li>
+                <li>Xcode</li>
+                <li>macOS</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="projetos" class="section-spacing">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="mb-2">Projetos em Destaque</h2>
+          <p class="text-secondary mb-0">Cards gerados por dados em JavaScript para facilitar manutenção e evolução.</p>
+        </div>
 
-  <section id="contato" class="section reveal-up">
-    <h3>Gostaria de ter um site para portfólio, e-commerce ou landing page?</h3>
-    <br>
-    <h3>Entre em contato:</h3>
-    <div class="icones-contato">
-      <a href="mailto:gustavoggomes@hotmail.com" target="_blank" class="icone-link">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://wa.me/5563984136762?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20site" target="_blank" class="icone-link">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/gustavoggomes" target="_blank" class="icone-link">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/Gustavoggomesdev" target="_blank" class="icone-link">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </section>
+        <div class="project-filters d-flex flex-wrap justify-content-center gap-2 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <button class="btn btn-sm btn-filter active" type="button" data-filter="all">Todos</button>
+          <button class="btn btn-sm btn-filter" type="button" data-filter="SwiftUI">SwiftUI</button>
+          <button class="btn btn-sm btn-filter" type="button" data-filter="Python">Python</button>
+          <button class="btn btn-sm btn-filter" type="button" data-filter="Flask">Flask</button>
+          <button class="btn btn-sm btn-filter" type="button" data-filter="UX/UI">UX/UI</button>
+        </div>
 
-  <footer>
-    <p>&copy; 2025 Gustavo Gomes. Todos os direitos reservados. Icons by icons8.</p>
+        <div id="projectsGrid" class="row g-4"></div>
+      </div>
+    </section>
+
+    <section id="contato" class="section-spacing section-muted">
+      <div class="container text-center" data-aos="fade-up">
+        <h2 class="mb-2">Vamos construir algo juntos?</h2>
+        <p class="text-secondary mb-4">Disponível para portfólio, landing page, sistemas web e melhorias de produto.</p>
+
+        <div class="d-flex justify-content-center flex-wrap gap-3 contact-links">
+          <a href="mailto:gustavoggomes@hotmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar email"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://wa.me/5563984136762?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20site" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/in/gustavoggomes" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/Gustavoggomesdev" target="_blank" rel="noopener noreferrer" aria-label="Perfil no GitHub"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 border-top border-secondary-subtle text-center">
+    <small class="text-secondary">&copy; <span id="year"></span> Gustavo Gomes. Todos os direitos reservados.</small>
   </footer>
 
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content project-modal-content">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title" id="projectModalLabel">Projeto</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="projectModalMedia" class="mb-3"></div>
+          <p id="projectModalText" class="mb-0 text-secondary"></p>
+        </div>
+        <div class="modal-footer border-0">
+          <a id="projectModalLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-info">Ver repositório</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js" defer></script>
-  <script>
-    const texto = "Olá, eu sou Gustavo";
-    const elemento = document.getElementById("digitando");
-    let i = 0;
-
-    function digitar() {
-      if (i < texto.length) {
-        elemento.innerHTML += texto.charAt(i);
-        i++;
-        setTimeout(digitar, 60);
-      }
-    }
-
-    window.onload = digitar;
-  </script>
 </body>
 </html>
-
-
