@@ -237,6 +237,79 @@ h3,
   line-height: 1.8;
 }
 
+.experience-card {
+  background: linear-gradient(155deg, rgba(13, 26, 40, 0.92), rgba(20, 40, 60, 0.86));
+}
+
+.experience-badge {
+  background: rgba(86, 224, 208, 0.16);
+  border: 1px solid rgba(86, 224, 208, 0.45);
+  border-radius: 999px;
+  color: var(--brand);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.38rem 0.78rem;
+  text-transform: uppercase;
+}
+
+.experience-timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.experience-item {
+  display: grid;
+  gap: 0.95rem;
+  grid-template-columns: 44px 1fr;
+}
+
+.experience-marker {
+  align-items: center;
+  background: linear-gradient(145deg, var(--brand), var(--brand-strong));
+  border-radius: 0.75rem;
+  color: #042027;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 44px;
+  justify-content: center;
+  position: relative;
+  width: 44px;
+}
+
+.experience-marker::after {
+  background: linear-gradient(180deg, rgba(86, 224, 208, 0.36), rgba(86, 224, 208, 0));
+  content: "";
+  height: calc(100% + 30px);
+  left: 50%;
+  position: absolute;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 2px;
+}
+
+.experience-item:last-child .experience-marker::after {
+  display: none;
+}
+
+.experience-content {
+  background: rgba(8, 19, 31, 0.42);
+  border: 1px solid rgba(145, 186, 218, 0.18);
+  border-radius: 0.9rem;
+  padding: 0.95rem 1rem;
+}
+
+.experience-content h3 {
+  color: #f7fcff;
+  font-size: 1.03rem;
+  margin-bottom: 0.45rem;
+}
+
+.experience-content p {
+  color: #d3e8f7;
+  margin: 0;
+}
+
 .highlights-strip {
   margin-top: 18px;
   padding: 0 0 22px;
@@ -539,5 +612,18 @@ h3,
   .profile-photo {
     height: 160px;
     width: 160px;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-marker {
+    height: 38px;
+    width: 38px;
+  }
+
+  .experience-marker::after {
+    display: none;
   }
 }
