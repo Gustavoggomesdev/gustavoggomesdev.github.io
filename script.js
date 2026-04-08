@@ -68,7 +68,6 @@ const projects = [
 
 const typingText = "Olá, eu sou Gustavo";
 let typingIndex = 0;
-let isAudioPlaying = false;
 let activeFilter = "all";
 
 function renderProjects() {
@@ -188,29 +187,6 @@ function runTypingEffect() {
   }, 60);
 }
 
-function setupAudioControl() {
-  const audio = document.getElementById("bg-music");
-  const playButton = document.getElementById("play-btn");
-  if (!audio || !playButton) return;
-
-  playButton.addEventListener("click", async () => {
-    if (!isAudioPlaying) {
-      try {
-        await audio.play();
-        playButton.innerHTML = '<i class="bi bi-pause-fill"></i>';
-        isAudioPlaying = true;
-      } catch (error) {
-        playButton.innerHTML = '<i class="bi bi-play-fill"></i>';
-      }
-      return;
-    }
-
-    audio.pause();
-    playButton.innerHTML = '<i class="bi bi-play-fill"></i>';
-    isAudioPlaying = false;
-  });
-}
-
 function setupNavbarScrollEffect() {
   const navbar = document.getElementById("navbar");
   if (!navbar) return;
@@ -274,7 +250,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupProjectEvents();
   setupProjectFilters();
   runTypingEffect();
-  setupAudioControl();
   setupNavbarScrollEffect();
   setupLoader();
   setupNavbarCollapseOnClick();
