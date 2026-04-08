@@ -6,7 +6,7 @@ const projects = [
     categories: ["SwiftUI"],
     shortDescription: "Interface com alternância dia/noite e foco em composição visual no SwiftUI.",
     fullDescription:
-      "Projeto desenvolvido em SwiftUI com troca dinâmica entre tema diurno e noturno. O objetivo principal foi praticar composição de interface, hierarquia visual e reutilização de componentes seguindo boas práticas de iOS.",
+      "Aplicação desenvolvida em SwiftUI com foco em arquitetura de interface declarativa, componentização e consistência visual. O projeto implementa alternância dinâmica entre modos diurno e noturno, ajustando cores, ícones e contraste de forma contextual para melhorar usabilidade. Também foram aplicados princípios de hierarquia visual, espaçamento e reutilização de componentes para aproximar a experiência de padrões profissionais do ecossistema iOS.",
     image: "Images/WEATHER_CODE.jpeg",
     mediaType: "video",
     media: "Images/WEATHERVIDEO.mp4",
@@ -19,7 +19,7 @@ const projects = [
     categories: ["Flask", "Python"],
     shortDescription: "Busca rápida em milhões de registros para uso diário em ambiente corporativo.",
     fullDescription:
-      "Aplicação web criada com Flask e MySQL para pesquisar subpastas em grandes servidores corporativos. Inclui processo de indexação automatizada em Python para manter a base atualizada e otimizada para buscas por termos completos e parciais.",
+      "Solução web corporativa construída com Flask e MySQL para consulta de subpastas em ambientes com grande volume de dados. O sistema foi estruturado para atender buscas por termos completos e parciais com baixa latência, mesmo em bases extensas. Inclui rotina automatizada em Python para varredura e indexação periódica de diretórios, garantindo atualização contínua da base e maior confiabilidade operacional para uso diário das equipes.",
     image: "Images/pesquisa_pro.PNG",
     mediaType: "image",
     media: "Images/pesquisa_pro.PNG",
@@ -32,7 +32,7 @@ const projects = [
     categories: ["UX/UI"],
     shortDescription: "Protótipo para monitoramento de humor com histórico e apoio clínico.",
     fullDescription:
-      "Protótipo acadêmico com foco em saúde emocional. O usuário registra sentimentos e motivos, visualiza histórico semanal/mensal e pode compartilhar informações com psicólogos para acompanhamento e agendamento de consultas.",
+      "Protótipo de produto digital idealizado para monitoramento de saúde emocional, concebido com foco em experiência do usuário e clareza de navegação. A solução permite registrar estado emocional e contexto, acompanhar histórico semanal e mensal e identificar padrões de comportamento. A proposta inclui fluxo de compartilhamento com profissionais de psicologia para suporte especializado e possibilidade de agendamento de atendimento, conectando acompanhamento pessoal e cuidado clínico.",
     image: "Images/Mindflow.PNG",
     mediaType: "video",
     media: "Images/MINDFLOWVIDEO.mp4",
@@ -45,7 +45,7 @@ const projects = [
     categories: ["Python"],
     shortDescription: "Rotinas automatizadas para reduzir tarefas repetitivas e elevar produtividade.",
     fullDescription:
-      "Conjunto de automações em Python e Shell para otimizar processos operacionais, incluindo transformação de PDF em PDF pesquisável, indexação de estruturas de diretórios e integração com fluxos corporativos.",
+      "Conjunto de automações voltadas para eficiência operacional, desenvolvido principalmente com Python e Shell Script. Entre as entregas estão conversão de documentos para PDF pesquisável, indexação de estruturas de diretórios e integração com rotinas corporativas recorrentes. O objetivo central foi reduzir tarefas manuais, padronizar processos e aumentar produtividade com soluções robustas, reaproveitáveis e de fácil manutenção.",
     image: "Images/automation.PNG",
     mediaType: "image",
     media: "Images/automation.PNG",
@@ -58,7 +58,7 @@ const projects = [
     categories: ["SwiftUI"],
     shortDescription: "Clone visual com grid responsivo e componentes reutilizáveis.",
     fullDescription:
-      "Interface inspirada no Spotify usando SwiftUI, explorando LazyVGrid, organização de componentes e consistência visual. Projeto voltado para evolução em design declarativo e experiência de navegação fluida.",
+      "Interface inspirada no Spotify desenvolvida em SwiftUI com foco em fidelidade visual, organização de layout e escalabilidade de componentes. O projeto explora LazyVGrid para composição responsiva de conteúdo, além de padrões de navegação fluida e hierarquia visual consistente. Foi utilizado como laboratório prático para evolução em design declarativo, refinamento de microinterações e construção de UI com padrão de produto real.",
     image: "Images/spotify_img.PNG",
     mediaType: "video",
     media: "Images/spotify_video.mp4",
