@@ -70,6 +70,81 @@ const typingText = "Olá, eu sou Gustavo";
 let typingIndex = 0;
 let activeFilter = "all";
 
+const carouselIndicators = [
+  {
+    containerSelector: ".highlights-strip .row",
+    dotsSelector: "#highlightsDots"
+  },
+  {
+    containerSelector: "#projectsGrid",
+    dotsSelector: "#projectsDots"
+  }
+];
+
+function getCarouselCards(container) {
+  return Array.from(container.children).filter((child) => child.offsetWidth > 0);
+}
+
+function getCenteredCardIndex(container, cards) {
+  const containerCenter = container.scrollLeft + container.clientWidth / 2;
+  let closestIndex = 0;
+  let closestDistance = Number.POSITIVE_INFINITY;
+
+  cards.forEach((card, index) => {
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const distance = Math.abs(cardCenter - containerCenter);
+
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestIndex = index;
+    }
+  });
+
+  return closestIndex;
+}
+
+function centerCard(container, card) {
+  const targetLeft = card.offsetLeft - (container.clientWidth - card.offsetWidth) / 2;
+  const maxScrollLeft = Math.max(0, container.scrollWidth - container.clientWidth);
+  const clampedLeft = Math.max(0, Math.min(targetLeft, maxScrollLeft));
+
+  container.scrollTo({ left: clampedLeft, behavior: "smooth" });
+}
+
+function updateCarouselIndicators() {
+  carouselIndicators.forEach((config) => {
+    const container = document.querySelector(config.containerSelector);
+    const dotsContainer = document.querySelector(config.dotsSelector);
+
+    if (!container || !dotsContainer) return;
+
+    const cards = getCarouselCards(container);
+    const currentCount = String(cards.length);
+
+    if (dotsContainer.dataset.count !== currentCount) {
+      dotsContainer.dataset.count = currentCount;
+      dotsContainer.innerHTML = "";
+
+      cards.forEach((card, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.setAttribute("aria-label", `Card ${index + 1} de ${cards.length}`);
+        dot.addEventListener("click", () => centerCard(container, card));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    const dots = Array.from(dotsContainer.children);
+    if (!dots.length) return;
+
+    const activeIndex = getCenteredCardIndex(container, cards);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === activeIndex);
+    });
+  });
+}
+
 function renderProjects() {
   const grid = document.getElementById("projectsGrid");
   if (!grid) return;
@@ -107,6 +182,8 @@ function renderProjects() {
   if (window.AOS) {
     AOS.refreshHard();
   }
+
+  updateCarouselIndicators();
 }
 
 function openProjectModal(projectId) {
@@ -169,6 +246,27 @@ function setupProjectFilters() {
       renderProjects();
     });
   });
+}
+
+function setupCarouselIndicators() {
+  const refreshIndicators = () => updateCarouselIndicators();
+
+  carouselIndicators.forEach((config) => {
+    const container = document.querySelector(config.containerSelector);
+    if (!container || container.dataset.indicatorBound === "true") return;
+
+    container.dataset.indicatorBound = "true";
+    container.addEventListener(
+      "scroll",
+      () => {
+        window.requestAnimationFrame(refreshIndicators);
+      },
+      { passive: true }
+    );
+  });
+
+  window.addEventListener("resize", refreshIndicators);
+  refreshIndicators();
 }
 
 function runTypingEffect() {
@@ -249,6 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   setupProjectEvents();
   setupProjectFilters();
+  setupCarouselIndicators();
   runTypingEffect();
   setupNavbarScrollEffect();
   setupLoader();
