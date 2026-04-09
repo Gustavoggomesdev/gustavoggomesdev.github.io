@@ -529,6 +529,32 @@ h3,
   width: 100%;
 }
 
+.carousel-dots {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-dot {
+  appearance: none;
+  background: rgba(168, 191, 212, 0.28);
+  border: 0;
+  border-radius: 999px;
+  cursor: default;
+  height: 8px;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease, width 0.2s ease;
+  width: 8px;
+}
+
+.carousel-dot.active {
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  transform: scale(1.2);
+  width: 24px;
+}
+
 .loading-screen {
   align-items: center;
   background: #040a12;
@@ -616,11 +642,11 @@ h3,
 
   .hero-section .col-lg-8,
   .hero-section .col-lg-4 {
-    text-align: left;
+    text-align: center;
   }
 
   .hero-section .d-flex.flex-wrap.gap-3 {
-    justify-content: flex-start !important;
+    justify-content: center !important;
   }
 
   .hero-bg-video {
@@ -647,25 +673,68 @@ h3,
     padding: 0.95rem;
   }
 
+  .hero-panel {
+    display: none;
+  }
+
   .highlights-strip .row {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    padding-bottom: 0;
-    scroll-snap-type: none;
-    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    justify-content: flex-start;
+  }
+
+  .highlights-strip .row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .highlights-strip .row {
+    scrollbar-width: none;
+  }
+
+  .highlights-strip .col-md-4 {
+    flex: 0 0 clamp(260px, 78vw, 340px);
+    max-width: clamp(260px, 78vw, 340px);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .highlights-strip .col-md-4 .highlight-card {
+    min-height: 168px;
   }
 
   #projectsGrid {
-    display: grid;
+    display: flex;
+    flex-wrap: nowrap;
     gap: 1rem;
-    overflow-x: visible;
-    padding-bottom: 0;
-    scroll-snap-type: none;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    justify-content: flex-start;
+  }
+
+  #projectsGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  #projectsGrid {
+    scrollbar-width: none;
   }
 
   #projectsGrid > div {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 clamp(270px, 80vw, 360px);
+    max-width: clamp(270px, 80vw, 360px);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   .project-card {
@@ -740,6 +809,10 @@ h3,
   .project-cta,
   .btn-filter {
     font-size: 0.9rem;
+  }
+
+  .carousel-dots {
+    display: flex;
   }
 }
 
