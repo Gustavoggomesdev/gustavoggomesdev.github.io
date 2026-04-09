@@ -269,6 +269,66 @@ function setupCarouselIndicators() {
   refreshIndicators();
 }
 
+function setupInteractiveMotion() {
+  const finePointer = window.matchMedia("(pointer: fine)");
+  if (!finePointer.matches) return;
+
+  const tiltTargets = document.querySelectorAll(
+    ".project-card, .highlight-card, .skill-card, .about-card:not(.experience-card), .hero-panel"
+  );
+
+  tiltTargets.forEach((element) => {
+    let frameId = null;
+
+    const resetTransform = () => {
+      element.style.transform = "";
+      element.style.setProperty("--tilt-x", "0deg");
+      element.style.setProperty("--tilt-y", "0deg");
+    };
+
+    element.addEventListener("pointermove", (event) => {
+      const bounds = element.getBoundingClientRect();
+      const centerX = bounds.left + bounds.width / 2;
+      const centerY = bounds.top + bounds.height / 2;
+      const offsetX = (event.clientX - centerX) / bounds.width;
+      const offsetY = (event.clientY - centerY) / bounds.height;
+      const rotateY = Math.max(-7, Math.min(7, offsetX * 14));
+      const rotateX = Math.max(-7, Math.min(7, offsetY * -14));
+
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        element.style.transform = `translateY(-4px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+    });
+
+    element.addEventListener("pointerleave", resetTransform);
+    element.addEventListener("blur", resetTransform);
+  });
+
+  const hero = document.querySelector(".hero-section");
+  const leftGlow = document.querySelector(".hero-glow-left");
+  const rightGlow = document.querySelector(".hero-glow-right");
+
+  if (hero && leftGlow && rightGlow) {
+    hero.addEventListener("pointermove", (event) => {
+      const bounds = hero.getBoundingClientRect();
+      const pointerX = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const pointerY = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+      leftGlow.style.transform = `translate3d(${pointerX * 26}px, ${pointerY * 18}px, 0) scale(1.04)`;
+      rightGlow.style.transform = `translate3d(${-pointerX * 26}px, ${-pointerY * 18}px, 0) scale(1.04)`;
+    });
+
+    hero.addEventListener("pointerleave", () => {
+      leftGlow.style.transform = "";
+      rightGlow.style.transform = "";
+    });
+  }
+}
+
 function runTypingEffect() {
   const target = document.getElementById("digitando");
   if (!target) return;
@@ -348,6 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupProjectEvents();
   setupProjectFilters();
   setupCarouselIndicators();
+  setupInteractiveMotion();
   runTypingEffect();
   setupNavbarScrollEffect();
   setupLoader();
