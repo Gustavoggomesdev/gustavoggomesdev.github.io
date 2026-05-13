@@ -1,12 +1,17 @@
+/* =========================================
+   PORTFOLIO — GUSTAVO GOMES
+   Redesigned script
+   ========================================= */
+
+// ─── DATA ───────────────────────────────
 const projects = [
   {
     id: "weather",
-    title: "Tela de Clima",
+    title: "Weather App",
     tag: "SwiftUI",
     categories: ["SwiftUI"],
-    shortDescription: "Interface com alternância dia/noite e foco em composição visual no SwiftUI.",
-    fullDescription:
-      "Aplicação desenvolvida em SwiftUI com foco em arquitetura de interface declarativa, componentização e consistência visual. O projeto implementa alternância dinâmica entre modos diurno e noturno, ajustando cores, ícones e contraste de forma contextual para melhorar usabilidade. Também foram aplicados princípios de hierarquia visual, espaçamento e reutilização de componentes para aproximar a experiência de padrões profissionais do ecossistema iOS.",
+    shortDescription: "Interface com alternância dia/noite e foco em composição visual declarativa.",
+    fullDescription: "Aplicação desenvolvida em SwiftUI com foco em arquitetura de interface declarativa, componentização e consistência visual. Implementa alternância dinâmica entre modos diurno e noturno, ajustando cores, ícones e contraste de forma contextual. Aplicados princípios de hierarquia visual, espaçamento e reutilização de componentes para aproximar a experiência de padrões profissionais do ecossistema iOS.",
     image: "Images/WEATHER_CODE.jpeg",
     mediaType: "video",
     media: "Images/WEATHERVIDEO.mp4",
@@ -14,12 +19,11 @@ const projects = [
   },
   {
     id: "search-system",
-    title: "Sistema de Pesquisa de Subpastas",
+    title: "Sistema de Pesquisa",
     tag: "Flask + MySQL",
     categories: ["Flask", "Python"],
-    shortDescription: "Busca rápida em milhões de registros para uso diário em ambiente corporativo.",
-    fullDescription:
-      "Solução web corporativa construída com Flask e MySQL para consulta de subpastas em ambientes com grande volume de dados. O sistema foi estruturado para atender buscas por termos completos e parciais com baixa latência, mesmo em bases extensas. Inclui rotina automatizada em Python para varredura e indexação periódica de diretórios, garantindo atualização contínua da base e maior confiabilidade operacional para uso diário das equipes.",
+    shortDescription: "Busca rápida em milhões de registros para uso corporativo diário.",
+    fullDescription: "Solução web corporativa construída com Flask e MySQL para consulta de subpastas em ambientes com grande volume de dados. Estruturado para atender buscas por termos completos e parciais com baixa latência. Inclui rotina automatizada em Python para varredura e indexação periódica de diretórios, garantindo atualização contínua da base.",
     image: "Images/pesquisa_pro.PNG",
     mediaType: "image",
     media: "Images/pesquisa_pro.PNG",
@@ -31,8 +35,7 @@ const projects = [
     tag: "UX/UI + Figma",
     categories: ["UX/UI"],
     shortDescription: "Protótipo para monitoramento de humor com histórico e apoio clínico.",
-    fullDescription:
-      "Protótipo de produto digital idealizado para monitoramento de saúde emocional, concebido com foco em experiência do usuário e clareza de navegação. A solução permite registrar estado emocional e contexto, acompanhar histórico semanal e mensal e identificar padrões de comportamento. A proposta inclui fluxo de compartilhamento com profissionais de psicologia para suporte especializado e possibilidade de agendamento de atendimento, conectando acompanhamento pessoal e cuidado clínico.",
+    fullDescription: "Protótipo de produto digital para monitoramento de saúde emocional, concebido com foco em UX e clareza de navegação. Permite registrar estado emocional, acompanhar histórico semanal e identificar padrões. Inclui fluxo de compartilhamento com profissionais e agendamento de atendimento.",
     image: "Images/Mindflow.PNG",
     mediaType: "video",
     media: "Images/MINDFLOWVIDEO.mp4",
@@ -40,12 +43,11 @@ const projects = [
   },
   {
     id: "automation",
-    title: "Automações em Python",
+    title: "Automações Python",
     tag: "Python",
     categories: ["Python"],
     shortDescription: "Rotinas automatizadas para reduzir tarefas repetitivas e elevar produtividade.",
-    fullDescription:
-      "Conjunto de automações voltadas para eficiência operacional, desenvolvido principalmente com Python e Shell Script. Entre as entregas estão conversão de documentos para PDF pesquisável, indexação de estruturas de diretórios e integração com rotinas corporativas recorrentes. O objetivo central foi reduzir tarefas manuais, padronizar processos e aumentar produtividade com soluções robustas, reaproveitáveis e de fácil manutenção.",
+    fullDescription: "Conjunto de automações voltadas para eficiência operacional, desenvolvido com Python e Shell Script. Entre as entregas: conversão de documentos para PDF pesquisável, indexação de diretórios e integração com rotinas corporativas. Objetivo: reduzir tarefas manuais e padronizar processos.",
     image: "Images/automation.PNG",
     mediaType: "image",
     media: "Images/automation.PNG",
@@ -56,9 +58,8 @@ const projects = [
     title: "Spotify Clone",
     tag: "SwiftUI",
     categories: ["SwiftUI"],
-    shortDescription: "Clone visual com grid responsivo e componentes reutilizáveis.",
-    fullDescription:
-      "Interface inspirada no Spotify desenvolvida em SwiftUI com foco em fidelidade visual, organização de layout e escalabilidade de componentes. O projeto explora LazyVGrid para composição responsiva de conteúdo, além de padrões de navegação fluida e hierarquia visual consistente. Foi utilizado como laboratório prático para evolução em design declarativo, refinamento de microinterações e construção de UI com padrão de produto real.",
+    shortDescription: "Clone visual com LazyVGrid, componentes reutilizáveis e navegação fluida.",
+    fullDescription: "Interface inspirada no Spotify desenvolvida em SwiftUI. Explora LazyVGrid para composição responsiva, padrões de navegação fluida e hierarquia visual consistente. Laboratório prático para evolução em design declarativo e construção de UI com padrão de produto real.",
     image: "Images/spotify_img.PNG",
     mediaType: "video",
     media: "Images/spotify_video.mp4",
@@ -66,358 +67,413 @@ const projects = [
   }
 ];
 
-const typingText = "Olá, eu sou Gustavo";
-let typingIndex = 0;
-let activeFilter = "all";
-
-const carouselIndicators = [
-  {
-    containerSelector: ".highlights-strip .row",
-    dotsSelector: "#highlightsDots"
-  },
-  {
-    containerSelector: "#projectsGrid",
-    dotsSelector: "#projectsDots"
-  }
+const roles = [
+  "iOS Developer",
+  "Software Engineer",
+  "UX-driven Builder",
+  "Python Developer"
 ];
 
-function getCarouselCards(container) {
-  return Array.from(container.children).filter((child) => child.offsetWidth > 0);
+// ─── STATE ──────────────────────────────
+let activeFilter = "all";
+let typingRoleIndex = 0;
+let typingCharIndex = 0;
+let typingDeleting = false;
+let typingTimeout = null;
+
+// ─── LOADER ─────────────────────────────
+function initLoader() {
+  const loader = document.getElementById("loader");
+  if (!loader) return;
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loader.classList.add("hidden");
+    }, 800);
+  });
+  setTimeout(() => loader.classList.add("hidden"), 3500);
 }
 
-function getCenteredCardIndex(container, cards) {
-  const containerCenter = container.scrollLeft + container.clientWidth / 2;
-  let closestIndex = 0;
-  let closestDistance = Number.POSITIVE_INFINITY;
+// ─── CANVAS GRID ────────────────────────
+function initGrid() {
+  const canvas = document.getElementById("grid-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
 
-  cards.forEach((card, index) => {
-    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-    const distance = Math.abs(cardCenter - containerCenter);
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    drawGrid();
+  }
 
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closestIndex = index;
+  function drawGrid() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const size = 60;
+    ctx.strokeStyle = "rgba(0,200,255,0.04)";
+    ctx.lineWidth = 1;
+
+    for (let x = 0; x < canvas.width; x += size) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, canvas.height);
+      ctx.stroke();
     }
+    for (let y = 0; y < canvas.height; y += size) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(canvas.width, y);
+      ctx.stroke();
+    }
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+}
+
+// ─── CURSOR ─────────────────────────────
+function initCursor() {
+  const cursor = document.getElementById("cursor");
+  const follower = document.getElementById("cursor-follower");
+  if (!cursor || !follower) return;
+
+  let mouseX = 0, mouseY = 0;
+  let followerX = 0, followerY = 0;
+
+  document.addEventListener("mousemove", e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + "px";
+    cursor.style.top = mouseY + "px";
   });
 
-  return closestIndex;
-}
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.12;
+    followerY += (mouseY - followerY) * 0.12;
+    follower.style.left = followerX + "px";
+    follower.style.top = followerY + "px";
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
 
-function centerCard(container, card) {
-  const targetLeft = card.offsetLeft - (container.clientWidth - card.offsetWidth) / 2;
-  const maxScrollLeft = Math.max(0, container.scrollWidth - container.clientWidth);
-  const clampedLeft = Math.max(0, Math.min(targetLeft, maxScrollLeft));
-
-  container.scrollTo({ left: clampedLeft, behavior: "smooth" });
-}
-
-function updateCarouselIndicators() {
-  carouselIndicators.forEach((config) => {
-    const container = document.querySelector(config.containerSelector);
-    const dotsContainer = document.querySelector(config.dotsSelector);
-
-    if (!container || !dotsContainer) return;
-
-    const cards = getCarouselCards(container);
-    const currentCount = String(cards.length);
-
-    if (dotsContainer.dataset.count !== currentCount) {
-      dotsContainer.dataset.count = currentCount;
-      dotsContainer.innerHTML = "";
-
-      cards.forEach((card, index) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = "carousel-dot";
-        dot.setAttribute("aria-label", `Card ${index + 1} de ${cards.length}`);
-        dot.addEventListener("click", () => centerCard(container, card));
-        dotsContainer.appendChild(dot);
-      });
-    }
-
-    const dots = Array.from(dotsContainer.children);
-    if (!dots.length) return;
-
-    const activeIndex = getCenteredCardIndex(container, cards);
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === activeIndex);
+  document.querySelectorAll("a, button, .project-row, .contact-card").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      cursor.style.transform = "translate(-50%, -50%) scale(2)";
+      follower.style.transform = "translate(-50%, -50%) scale(1.5)";
+      follower.style.opacity = "0.3";
+    });
+    el.addEventListener("mouseleave", () => {
+      cursor.style.transform = "translate(-50%, -50%) scale(1)";
+      follower.style.transform = "translate(-50%, -50%) scale(1)";
+      follower.style.opacity = "0.5";
     });
   });
 }
 
-function renderProjects() {
-  const grid = document.getElementById("projectsGrid");
-  if (!grid) return;
+// ─── NAVBAR ─────────────────────────────
+function initNavbar() {
+  const navbar = document.getElementById("navbar");
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (!navbar) return;
 
-  const filteredProjects = projects.filter((project) => {
-    if (activeFilter === "all") return true;
-    return project.categories.includes(activeFilter);
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
   });
 
-  const cards = filteredProjects
-    .map(
-      (project) => `
-        <div class="col-md-6 col-xl-4" data-aos="fade-up">
-          <article class="card project-card h-100">
-            <div class="project-media">
-              <img src="${project.image}" alt="Projeto ${project.title}" loading="lazy" />
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="project-tag">${project.tag}</span>
-              <h3 class="h5">${project.title}</h3>
-              <p class="mb-3">${project.shortDescription}</p>
-              <button class="btn project-cta mt-auto js-open-project" data-project-id="${project.id}" type="button">
-                Ver detalhes
-                <i class="bi bi-arrow-up-right ms-2"></i>
-              </button>
-            </div>
-          </article>
-        </div>
-      `
-    )
-    .join("");
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("open");
+      mobileMenu.classList.toggle("open");
+    });
 
-  grid.innerHTML = cards || '<div class="col-12"><p class="text-center text-secondary mb-0">Nenhum projeto encontrado para este filtro.</p></div>';
-
-  if (window.AOS) {
-    AOS.refreshHard();
+    mobileMenu.querySelectorAll(".mobile-link").forEach(link => {
+      link.addEventListener("click", () => {
+        menuBtn.classList.remove("open");
+        mobileMenu.classList.remove("open");
+      });
+    });
   }
-
-  updateCarouselIndicators();
 }
 
-function openProjectModal(projectId) {
-  const project = projects.find((item) => item.id === projectId);
-  if (!project) return;
+// ─── TYPING EFFECT ──────────────────────
+function initTyping() {
+  const el = document.getElementById("typed-role");
+  if (!el) return;
 
-  const modalElement = document.getElementById("projectModal");
-  const titleElement = document.getElementById("projectModalLabel");
-  const textElement = document.getElementById("projectModalText");
-  const mediaElement = document.getElementById("projectModalMedia");
-  const linkElement = document.getElementById("projectModalLink");
+  function type() {
+    const currentRole = roles[typingRoleIndex];
 
-  titleElement.textContent = project.title;
-  textElement.textContent = project.fullDescription;
+    if (!typingDeleting) {
+      el.textContent = currentRole.slice(0, ++typingCharIndex);
+      if (typingCharIndex === currentRole.length) {
+        typingDeleting = true;
+        typingTimeout = setTimeout(type, 1800);
+        return;
+      }
+    } else {
+      el.textContent = currentRole.slice(0, --typingCharIndex);
+      if (typingCharIndex === 0) {
+        typingDeleting = false;
+        typingRoleIndex = (typingRoleIndex + 1) % roles.length;
+      }
+    }
 
-  if (project.mediaType === "video") {
-    mediaElement.innerHTML = `
-      <video class="project-modal-media" controls autoplay muted loop playsinline>
-        <source src="${project.media}" type="video/mp4" />
-        Seu navegador não suporta vídeo.
-      </video>
+    const speed = typingDeleting ? 50 : 90;
+    typingTimeout = setTimeout(type, speed);
+  }
+
+  type();
+}
+
+// ─── COUNTER ANIMATION ──────────────────
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  const duration = 1200;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
+}
+
+// ─── REVEAL ANIMATIONS ──────────────────
+function initReveal() {
+  const els = document.querySelectorAll(".reveal-up");
+
+  // Hero elements — animate on load
+  setTimeout(() => {
+    document.querySelectorAll("#hero .reveal-up").forEach((el, i) => {
+      const delay = parseInt(el.dataset.delay || 0);
+      setTimeout(() => el.classList.add("visible"), delay);
+    });
+  }, 900);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+
+        // Counters
+        entry.target.querySelectorAll(".stat-num").forEach(animateCounter);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".section .reveal-up, .hero-stats").forEach(el => observer.observe(el));
+}
+
+// ─── PROJECTS ───────────────────────────
+function renderProjects() {
+  const showcase = document.getElementById("projects-showcase");
+  if (!showcase) return;
+
+  const filtered = projects.filter(p =>
+    activeFilter === "all" || p.categories.includes(activeFilter)
+  );
+
+  if (!filtered.length) {
+    showcase.innerHTML = `<p style="text-align:center;color:var(--text-muted);padding:40px 0">Nenhum projeto encontrado.</p>`;
+    return;
+  }
+
+  showcase.innerHTML = filtered.map((project, i) => {
+    const isReverse = i % 2 !== 0;
+    const mediaHtml = project.mediaType === "video"
+      ? `<video src="${project.media}" muted loop playsinline preload="none" class="proj-video-el"></video>`
+      : `<img src="${project.image}" alt="${project.title}" loading="lazy" />`;
+
+    return `
+      <div class="project-row${isReverse ? " reverse" : ""}" data-project-id="${project.id}">
+        <div class="proj-media">
+          ${mediaHtml}
+          <div class="proj-media-overlay"></div>
+          ${project.mediaType === "video" ? `<div class="proj-play-btn"><i class="bi bi-play-fill"></i></div>` : ""}
+        </div>
+        <div class="proj-info">
+          <div class="proj-number">${String(i + 1).padStart(2, "0")}</div>
+          <div class="proj-tag">${project.tag}</div>
+          <h3 class="proj-title">${project.title}</h3>
+          <p class="proj-desc">${project.shortDescription}</p>
+          <div class="proj-actions">
+            <button class="proj-btn-detail js-open-project" data-project-id="${project.id}">
+              Ver detalhes <i class="bi bi-arrow-up-right"></i>
+            </button>
+            ${project.repo ? `<a href="${project.repo}" target="_blank" rel="noopener" class="proj-btn-repo"><i class="bi bi-github"></i> Repositório</a>` : ""}
+          </div>
+        </div>
+      </div>
     `;
-  } else {
-    mediaElement.innerHTML = `<img class="project-modal-media" src="${project.media}" alt="Mídia do projeto ${project.title}" loading="lazy" />`;
-  }
+  }).join("");
 
-  if (project.repo) {
-    linkElement.href = project.repo;
-    linkElement.classList.remove("d-none");
-  } else {
-    linkElement.classList.add("d-none");
-  }
-
-  const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
-  modalInstance.show();
+  // Hover video play — add class to hide play button while playing
+  showcase.querySelectorAll(".project-row").forEach(row => {
+    const video = row.querySelector(".proj-video-el");
+    if (video) {
+      row.addEventListener("mouseenter", () => {
+        video.play()
+          .then(() => row.classList.add("video-playing"))
+          .catch(() => {});
+      });
+      row.addEventListener("mouseleave", () => {
+        row.classList.remove("video-playing");
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  });
 }
 
 function setupProjectEvents() {
-  const grid = document.getElementById("projectsGrid");
-  if (!grid) return;
+  const showcase = document.getElementById("projects-showcase");
+  if (!showcase) return;
 
-  grid.addEventListener("click", (event) => {
-    const button = event.target.closest(".js-open-project");
-    if (!button) return;
-    openProjectModal(button.dataset.projectId);
+  showcase.addEventListener("click", e => {
+    const btn = e.target.closest(".js-open-project");
+    if (!btn) return;
+    openModal(btn.dataset.projectId);
   });
 }
 
-function setupProjectFilters() {
-  const filterButtons = document.querySelectorAll(".btn-filter");
-  if (!filterButtons.length) return;
-
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      activeFilter = button.dataset.filter;
-
-      filterButtons.forEach((item) => item.classList.remove("active"));
-      button.classList.add("active");
-
+function setupFilters() {
+  document.querySelectorAll(".pf-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeFilter = btn.dataset.filter;
+      document.querySelectorAll(".pf-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
       renderProjects();
     });
   });
 }
 
-function setupCarouselIndicators() {
-  const refreshIndicators = () => updateCarouselIndicators();
+// ─── MODAL ──────────────────────────────
+function openModal(projectId) {
+  const project = projects.find(p => p.id === projectId);
+  if (!project) return;
 
-  carouselIndicators.forEach((config) => {
-    const container = document.querySelector(config.containerSelector);
-    if (!container || container.dataset.indicatorBound === "true") return;
+  const overlay = document.getElementById("project-modal");
+  document.getElementById("pmodal-tag").textContent = project.tag;
+  document.getElementById("pmodal-title").textContent = project.title;
+  document.getElementById("pmodal-desc").textContent = project.fullDescription;
 
-    container.dataset.indicatorBound = "true";
-    container.addEventListener(
-      "scroll",
-      () => {
-        window.requestAnimationFrame(refreshIndicators);
-      },
-      { passive: true }
-    );
-  });
-
-  window.addEventListener("resize", refreshIndicators);
-  refreshIndicators();
-}
-
-function setupInteractiveMotion() {
-  const finePointer = window.matchMedia("(pointer: fine)");
-  if (!finePointer.matches) return;
-
-  const tiltTargets = document.querySelectorAll(
-    ".project-card, .highlight-card, .skill-card, .about-card:not(.experience-card), .hero-panel"
-  );
-
-  tiltTargets.forEach((element) => {
-    let frameId = null;
-
-    const resetTransform = () => {
-      element.style.transform = "";
-      element.style.setProperty("--tilt-x", "0deg");
-      element.style.setProperty("--tilt-y", "0deg");
-    };
-
-    element.addEventListener("pointermove", (event) => {
-      const bounds = element.getBoundingClientRect();
-      const centerX = bounds.left + bounds.width / 2;
-      const centerY = bounds.top + bounds.height / 2;
-      const offsetX = (event.clientX - centerX) / bounds.width;
-      const offsetY = (event.clientY - centerY) / bounds.height;
-      const rotateY = Math.max(-7, Math.min(7, offsetX * 14));
-      const rotateX = Math.max(-7, Math.min(7, offsetY * -14));
-
-      if (frameId) {
-        window.cancelAnimationFrame(frameId);
-      }
-
-      frameId = window.requestAnimationFrame(() => {
-        element.style.transform = `translateY(-4px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      });
-    });
-
-    element.addEventListener("pointerleave", resetTransform);
-    element.addEventListener("blur", resetTransform);
-  });
-
-  const hero = document.querySelector(".hero-section");
-  const leftGlow = document.querySelector(".hero-glow-left");
-  const rightGlow = document.querySelector(".hero-glow-right");
-
-  if (hero && leftGlow && rightGlow) {
-    hero.addEventListener("pointermove", (event) => {
-      const bounds = hero.getBoundingClientRect();
-      const pointerX = (event.clientX - bounds.left) / bounds.width - 0.5;
-      const pointerY = (event.clientY - bounds.top) / bounds.height - 0.5;
-
-      leftGlow.style.transform = `translate3d(${pointerX * 26}px, ${pointerY * 18}px, 0) scale(1.04)`;
-      rightGlow.style.transform = `translate3d(${-pointerX * 26}px, ${-pointerY * 18}px, 0) scale(1.04)`;
-    });
-
-    hero.addEventListener("pointerleave", () => {
-      leftGlow.style.transform = "";
-      rightGlow.style.transform = "";
-    });
-  }
-}
-
-function runTypingEffect() {
-  const target = document.getElementById("digitando");
-  if (!target) return;
-
-  target.textContent = "";
-
-  const interval = setInterval(() => {
-    target.textContent += typingText.charAt(typingIndex);
-    typingIndex += 1;
-
-    if (typingIndex >= typingText.length) {
-      clearInterval(interval);
-    }
-  }, 60);
-}
-
-function setupNavbarScrollEffect() {
-  const navbar = document.getElementById("navbar");
-  if (!navbar) return;
-
-  const updateNavbar = () => {
-    if (window.scrollY > 30) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  };
-
-  updateNavbar();
-  window.addEventListener("scroll", updateNavbar);
-}
-
-function setupLoader() {
-  const loader = document.getElementById("loading");
-  const video = document.querySelector(".hero-bg-video");
-  if (!loader || !video) return;
-
-  const hideLoader = () => {
-    loader.style.opacity = "0";
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 400);
-  };
-
-  if (video.readyState >= 3) {
-    hideLoader();
+  const media = document.getElementById("pmodal-media");
+  if (project.mediaType === "video") {
+    media.innerHTML = `<video src="${project.media}" controls autoplay muted loop playsinline></video>`;
   } else {
-    video.addEventListener("canplaythrough", hideLoader, { once: true });
-    video.addEventListener("error", hideLoader, { once: true });
-    setTimeout(hideLoader, 4500);
+    media.innerHTML = `<img src="${project.media}" alt="${project.title}" />`;
   }
+
+  const actions = document.getElementById("pmodal-actions");
+  actions.innerHTML = project.repo
+    ? `<a href="${project.repo}" target="_blank" rel="noopener" class="proj-btn-detail"><i class="bi bi-github"></i> Ver Repositório</a>`
+    : "";
+
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
-function setupNavbarCollapseOnClick() {
-  const nav = document.getElementById("mainNav");
-  if (!nav) return;
+function closeModal() {
+  const overlay = document.getElementById("project-modal");
+  overlay.classList.remove("open");
+  document.body.style.overflow = "";
+  const media = document.getElementById("pmodal-media");
+  const video = media.querySelector("video");
+  if (video) { video.pause(); video.src = ""; }
+}
 
-  nav.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      const collapse = bootstrap.Collapse.getInstance(nav);
-      if (collapse) {
-        collapse.hide();
-      }
-    });
+function setupModal() {
+  document.getElementById("pmodal-close")?.addEventListener("click", closeModal);
+  document.getElementById("project-modal")?.addEventListener("click", e => {
+    if (e.target.id === "project-modal") closeModal();
+  });
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeModal();
   });
 }
 
-function setCurrentYear() {
-  const year = document.getElementById("year");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
+// ─── YEAR ───────────────────────────────
+function setYear() {
+  const el = document.getElementById("year");
+  if (el) el.textContent = new Date().getFullYear();
 }
 
+// ─── SECTION OBSERVER ───────────────────
+function initSectionReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll(".skill-block, .exp-item, .contact-card, .about-photo-frame, .about-text-block, .about-lead, .about-body, .experience-timeline").forEach((el, i) => {
+          setTimeout(() => {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+          }, i * 80);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".section").forEach(section => {
+    section.querySelectorAll(".skill-block, .exp-item, .contact-card, .about-photo-frame, .about-text-block, .about-lead, .about-body, .experience-timeline").forEach(el => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    });
+    observer.observe(section);
+  });
+
+  // Project rows observer
+  const projObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+        projObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const observeProjects = () => {
+    document.querySelectorAll(".project-row").forEach((row, i) => {
+      row.style.opacity = "0";
+      row.style.transform = "translateY(30px)";
+      row.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+      projObserver.observe(row);
+    });
+  };
+
+  // Re-observe after filter
+  const origRender = window._renderProjects;
+  setTimeout(observeProjects, 100);
+
+  return observeProjects;
+}
+
+// ─── INIT ────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
+  initLoader();
+  initGrid();
+  initCursor();
+  initNavbar();
+  initTyping();
   renderProjects();
   setupProjectEvents();
-  setupProjectFilters();
-  setupCarouselIndicators();
-  setupInteractiveMotion();
-  runTypingEffect();
-  setupNavbarScrollEffect();
-  setupLoader();
-  setupNavbarCollapseOnClick();
-  setCurrentYear();
+  setupFilters();
+  setupModal();
+  setYear();
+  initReveal();
 
-  AOS.init({
-    once: true,
-    duration: 700,
-    easing: "ease-out-cubic"
+  const observeProjects = initSectionReveal();
+
+  // Re-observe project rows after filter change
+  document.querySelectorAll(".pf-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setTimeout(observeProjects, 50);
+    });
   });
 });
